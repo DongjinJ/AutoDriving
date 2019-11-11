@@ -1,0 +1,12 @@
+23:39:58 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.cpp:10:2: error: 'PLLI2SON' was not declared in this scope
+  PLLI2SON |= ENABLE;
+  ^~~~~~~~
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+23:39:59 Build Failed. 2 errors, 0 warnings. (took 887ms)
+
