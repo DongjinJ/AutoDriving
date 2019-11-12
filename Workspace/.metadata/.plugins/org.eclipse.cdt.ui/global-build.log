@@ -46,3 +46,421 @@ arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DN
   ^~~~~~~~
 make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:21:16 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:23:1: error: missing type-name in typedef-declaration
+ };
+ ^
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.h:27:21: error: 'RCC_TypeDef' was not declared in this scope
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                     ^
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:27:34: error: expected primary-expression before ')' token
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                  ^
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:11:27: error: expected primary-expression before 'unsigned'
+ #define PERIPH_BASE     ((unsigned int 0x4000_0000))
+                           ^
+../Inc/RCC/RCC_Init.h:25:27: note: in expansion of macro 'PERIPH_BASE'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                           ^~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:11:27: error: expected ')' before 'unsigned'
+ #define PERIPH_BASE     ((unsigned int 0x4000_0000))
+                           ^
+../Inc/RCC/RCC_Init.h:25:27: note: in expansion of macro 'PERIPH_BASE'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                           ^~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected ')' before ';' token
+  RCC->;
+       ^
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected ')' before ';' token
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected ')' before ';' token
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:21:30 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:23:1: error: missing type-name in typedef-declaration
+ };
+ ^
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.h:27:21: error: 'RCC_TypeDef' was not declared in this scope
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                     ^
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:27:34: error: expected primary-expression before ')' token
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                  ^
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:11:41: error: unable to find numeric literal operator 'operator""_0000'
+ #define PERIPH_BASE     ((unsigned int) 0x4000_0000)
+                                         ^
+../Inc/RCC/RCC_Init.h:25:27: note: in expansion of macro 'PERIPH_BASE'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                           ^~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:25:41: error: unable to find numeric literal operator 'operator""_0000'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                                         ^
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:26:39: error: unable to find numeric literal operator 'operator""_1000'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                                       ^
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected unqualified-id before ';' token
+  RCC->;
+       ^
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:21:45 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.h:11:41: error: unable to find numeric literal operator 'operator""_0000'
+ #define PERIPH_BASE     ((unsigned int) 0x4000_0000)
+                                         ^
+../Inc/RCC/RCC_Init.h:25:27: note: in expansion of macro 'PERIPH_BASE'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                           ^~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:25:41: error: unable to find numeric literal operator 'operator""_0000'
+ #define AHBERIPH_BASE    (PERIPH_BASE + 0X0002_0000)
+                                         ^
+../Inc/RCC/RCC_Init.h:26:23: note: in expansion of macro 'AHBERIPH_BASE'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                       ^~~~~~~~~~~~~
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.h:26:39: error: unable to find numeric literal operator 'operator""_1000'
+ #define RCC_BASE     (AHBERIPH_BASE + 0X0000_1000)
+                                       ^
+../Inc/RCC/RCC_Init.h:27:36: note: in expansion of macro 'RCC_BASE'
+ #define RCC       ((RCC_TypeDef *) RCC_BASE)
+                                    ^~~~~~~~
+../Inc/RCC/RCC_Init.cpp:10:2: note: in expansion of macro 'RCC'
+  RCC->;
+  ^~~
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected unqualified-id before ';' token
+  RCC->;
+       ^
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:22:10 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.cpp:10:7: error: expected unqualified-id before ';' token
+  RCC->;
+       ^
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:22:22 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+arm-none-eabi-g++ -o "AutoDriving.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\AutoDriving\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoDriving.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: AutoDriving.elf
+ 
+arm-none-eabi-objdump -h -S  AutoDriving.elf  > "AutoDriving.list"
+arm-none-eabi-size   AutoDriving.elf 
+   text	   data	    bss	    dec	    hex	filename
+    656	      8	   1568	   2232	    8b8	AutoDriving.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoDriving.list
+ 
+20:27:05 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Src/main.c: In function 'main':
+../Src/main.c:12:2: error: 'RCC' undeclared (first use in this function)
+  RCC->CR |= (uint32_t)0x00000001;
+  ^~~
+../Src/main.c:12:2: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:12:14: error: 'uint32_t' undeclared (first use in this function)
+  RCC->CR |= (uint32_t)0x00000001;
+              ^~~~~~~~
+../Src/main.c:12:23: error: expected ';' before numeric constant
+  RCC->CR |= (uint32_t)0x00000001;
+                       ^~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:34:59 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+arm-none-eabi-g++ -o "AutoDriving.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\AutoDriving\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoDriving.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: AutoDriving.elf
+ 
+arm-none-eabi-objdump -h -S  AutoDriving.elf  > "AutoDriving.list"
+arm-none-eabi-size   AutoDriving.elf 
+   text	   data	    bss	    dec	    hex	filename
+    656	      8	   1568	   2232	    8b8	AutoDriving.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoDriving.list
+ 
+20:35:32 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:13:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:14:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t PLLCFGR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:15:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CFGR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:16:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CIR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:17:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB1RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:18:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB2RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:19:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t APB1RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:20:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t APB2RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:21:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB1ENR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:22:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB2ENR;
+           ^~~~~~~~
+           char32_t
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:37:09 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:15:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:16:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t PLLCFGR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:17:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CFGR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:18:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t CIR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:19:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB1RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:20:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB2RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:21:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t APB1RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:22:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t APB2RSTR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:23:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB1ENR;
+           ^~~~~~~~
+           char32_t
+../Inc/RCC/RCC_Init.h:24:11: error: 'uint32_t' does not name a type; did you mean 'char32_t'?
+  volatile uint32_t AHB2ENR;
+           ^~~~~~~~
+           char32_t
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:37:25 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:14:1: error: expected initializer before 'typedef'
+ typedef struct{
+ ^~~~~~~
+../Inc/RCC/RCC_Init.h:25:3: error: 'RCC_TypeDef' does not name a type
+ } RCC_TypeDef;
+   ^~~~~~~~~~~
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:37:30 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:14:1: error: expected initializer before 'typedef'
+ typedef struct{
+ ^~~~~~~
+../Inc/RCC/RCC_Init.h:25:3: error: 'RCC_TypeDef' does not name a type
+ } RCC_TypeDef;
+   ^~~~~~~~~~~
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:37:47 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Src/main.c: In function 'main':
+../Src/main.c:12:2: error: unknown type name 'uint32_t'
+  uint32_t count;
+  ^~~~~~~~
+../Src/main.c:12:11: warning: unused variable 'count' [-Wunused-variable]
+  uint32_t count;
+           ^~~~~
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:15:1: error: expected initializer before 'typedef'
+ typedef struct{
+ ^~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/RCC/RCC_Init.h:26:3: error: 'RCC_TypeDef' does not name a type
+ } RCC_TypeDef;
+   ^~~~~~~~~~~
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:38:23 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Src/main.c: In function 'main':
+../Src/main.c:12:2: error: unknown type name 'uint32_t'
+  uint32_t count;
+  ^~~~~~~~
+../Src/main.c:12:11: warning: unused variable 'count' [-Wunused-variable]
+  uint32_t count;
+           ^~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Inc/RCC/RCC_Init.cpp:7:0:
+../Inc/RCC/RCC_Init.h:15:1: error: expected initializer before 'typedef'
+ typedef struct{
+ ^~~~~~~
+../Inc/RCC/RCC_Init.h:26:3: error: 'RCC_TypeDef' does not name a type
+ } RCC_TypeDef;
+   ^~~~~~~~~~~
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:38:28 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Src/main.c: In function 'main':
+../Src/main.c:12:2: error: unknown type name 'uint32_t'
+  uint32_t count;
+  ^~~~~~~~
+../Src/main.c:12:11: warning: unused variable 'count' [-Wunused-variable]
+  uint32_t count;
+           ^~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:46:05 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+../Inc/RCC/RCC_Init.cpp: In function 'void RCC_Init()':
+../Inc/RCC/RCC_Init.cpp:11:1: error: expected primary-expression before '}' token
+ }
+ ^
+make: *** [Inc/RCC/subdir.mk:18: Inc/RCC/RCC_Init.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:46:13 **** Incremental Build of configuration Debug for project AutoDriving ****
+make -j8 all 
+arm-none-eabi-g++ "../Inc/RCC/RCC_Init.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Inc/RCC/RCC_Init.d" -MT"Inc/RCC/RCC_Init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Inc/RCC/RCC_Init.o"
+arm-none-eabi-g++ -o "AutoDriving.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\AutoDriving\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AutoDriving.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: AutoDriving.elf
+ 
+arm-none-eabi-objdump -h -S  AutoDriving.elf  > "AutoDriving.list"
+arm-none-eabi-size   AutoDriving.elf 
+   text	   data	    bss	    dec	    hex	filename
+    656	      8	   1568	   2232	    8b8	AutoDriving.elf
+Finished building: default.size.stdout
+ 
+Finished building: AutoDriving.list
+ 
