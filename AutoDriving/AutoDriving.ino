@@ -3,6 +3,11 @@
 #include <avr/wdt.h>
 #include <LowPower.h>
 
+/* Configuration */
+#define ENABLE  1
+#define DISABLE 0
+
+#define DEBUG   ENABLE
 /*  define  */
 #define WheelGear 30
 #define EncoderGear 81
@@ -15,7 +20,7 @@
 #define cdSensor A0
 #define irSensor A1
 
-#define SamplingTime 0.01
+#define SamplingTime 0.09
 
 /* Pin Number */
 const byte Phase_A = 21;
@@ -63,8 +68,8 @@ int frontDistance = 0;
 volatile float PI_Control = 0;
 volatile float P_Control = 0;
 volatile float I_Control = 0;
-volatile float Kp = 25;
-volatile float Ki = 11;
+volatile float Kp = 50;
+volatile float Ki = 110;
 volatile float error = 0;
 
 float refVelocity = 0;
@@ -103,7 +108,7 @@ void setup() {
   state = new flag();
 
   Serial.begin(115200);
-  Serial1.begin(9600);
+  Serial2.begin(9600);
 
   Order.reserve(200);
 
@@ -120,6 +125,11 @@ void loop() {
   Sensing();
 
   Actuating();
+  Serial.print("Current power: ");
+  Serial.print(velocity);
+  Serial.print("\tReference: ");
+  Serial.println(refVelocity);
+  delay(50);
 }
 
 void Sensing() {
@@ -131,7 +141,7 @@ void Sensing() {
 
   if (brightness > 600) {
     state->LED = true;
-    Serial1.println("LED signal ON");
+    Serial2.println("LED signal ON");
   }
   else {
     state->LED = false;
@@ -143,7 +153,10 @@ void Sensing() {
   // Serial.println(frontDistance);
   if (frontDistance > 300) {
     state->AEB = true;
-    Serial1.println("AEB signal ON");
+    Serial2.println("AEB signal ON");
+#if (DEBUG == ENABLE)
+    Serial.println("AEB signal ON");
+#endif
   }
   else {
     state->AEB = false;
@@ -158,14 +171,17 @@ void Actuating() {
     int indexS = Order.indexOf("S");
     String strV = Order.substring(indexV + 1, indexS);
     String strS = Order.substring(indexS + 1, Order.length());
-    Serial.println("V:  " + strV + "\tS: " + strS);
+
     refVelocity = strV.toFloat();
     Steering = strS.toInt();
+#if   (DEBUG == ENABLE)
+    Serial.println("V:  " + strV + "\tS: " + strS);
     Serial.print("Current velocity: ");
     Serial.print(velocity);
     Serial.print("\tGoal: ");
     Serial.print(refVelocity);
     Serial.println("m/s");
+#endif
     Order = "";
   }
 
@@ -216,7 +232,7 @@ ISR(TIMER1_COMPA_vect) {
   }
   else
     AEB_system();
-}   // 0.1초마다 동작
+}   // 0.01초마다 동작
 
 
 
@@ -230,12 +246,12 @@ ISR(INT0_vect) {
 }   // Phase A
 
 ISR(INT2_vect) {
-  if (state->Sleep) 
-    ;
-  else
-    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
-    
-    state->Sleep != state->Sleep;
+//  if (state->Sleep)
+//    ;
+//  else
+//    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+
+  state->Sleep != state->Sleep;
 }   // Sleep mode Wake up
 
 
@@ -340,9 +356,9 @@ void Motor_power(int value) {
   OCR3B = value;
 }
 
-void serialEvent1() {
-  while (Serial1.available()) {
-    char inChar = (char)Serial1.read();
+void serialEvent2() {
+  while (Serial2.available()) {
+    char inChar = (char)Serial2.read();
     Order += inChar;
     delay(10);
   }
