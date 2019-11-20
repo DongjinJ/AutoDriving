@@ -1,5 +1,9 @@
 /* Servo Left/center/Right: 150/190/230 +-40 */
+/*  include */
+#include <avr/wdt.h>
+#include <LowPower.h>
 
+/*  define  */
 #define WheelGear 30
 #define EncoderGear 81
 #define TwoPiR 0.19823
@@ -10,6 +14,8 @@
 
 #define cdSensor A0
 #define irSensor A1
+
+#define SamplingTime 0.01
 
 /* Pin Number */
 const byte Phase_A = 21;
@@ -22,12 +28,14 @@ const byte Left_LED = 53;
 const byte Right_LED = 51;
 const byte Head_LED = 49;
 const byte Rear_LED = 47;
+const byte WakeUp = 19;
 
 /* Initialize Function */
 void Pin_Init();
 void Interrupt_Init();
 void Timer_Init();
 void PWM_Init();
+void Watchdog_Init();
 
 /* Motor Function */
 void Forward();
@@ -68,6 +76,7 @@ class flag {
     volatile bool change;
     volatile bool AEB;
     volatile bool LED;
+    volatile bool Sleep;
 
     flag();
     ~flag();
@@ -76,6 +85,7 @@ flag::flag() {
   change = false;
   AEB = false;
   LED = false;
+  Sleep = false;
 }
 flag::~flag() {
 
@@ -87,6 +97,8 @@ void setup() {
   Interrupt_Init();
   Timer_Init();
   PWM_Init();
+
+  Watchdog_Init();
 
   state = new flag();
 
@@ -103,6 +115,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  wdt_reset();
+
   Sensing();
 
   Actuating();
@@ -215,10 +229,21 @@ ISR(INT0_vect) {
 
 }   // Phase A
 
+ISR(INT2_vect) {
+  if (state->Sleep) 
+    ;
+  else
+    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+    
+    state->Sleep != state->Sleep;
+}   // Sleep mode Wake up
+
+
 void Pin_Init() {
   /* Input */
   pinMode(Phase_A, INPUT);     // Encoder Phase A
   pinMode(Phase_B, INPUT);     // Encoder Phase B
+  pinMode(WakeUp,  INPUT);     // Wake up pin
 
   /* Output */
   pinMode(Motor, OUTPUT);             // Motor PWM
@@ -235,8 +260,15 @@ void Interrupt_Init() {
   EICRA |= (1 << ISC01);
   EICRA &= ~(1 << ISC00);       // INT0 Falling Edge
 
+  EICRA |= (1 << ISC21);
+  EICRA &= ~(1 << ISC20);       // INT2 Falling Edge
+
   EIFR |= (1 << INTF0);         // Clear INT0 Flag
+  EIFR |= (1 << INTF2);         // Clear INT2 Flag
+
   EIMSK |= (1 << INT0);         // Enable INT0
+  EIMSK |= (1 << INT2);         // Enable INT2
+
   sei();
 }
 
@@ -250,7 +282,7 @@ void Timer_Init() {
   TCCR1B |= (1 << CS11);
   TCCR1B |= (1 << CS10);            // CLK/64
 
-  OCR1A = 24999;                    // 10Hz = 0.1 sec
+  OCR1A = (16000000 / 64) * SamplingTime - 1;                // 10Hz = 0.1 sec
   TCNT1 = 0x0000;
 
   TIMSK1 |= (1 << OCIE1A);          // interrupt Enable
@@ -286,7 +318,9 @@ void PWM_Init() {
 
   TCNT4 = 0;
 }
-
+void Watchdog_Init() {
+  wdt_enable(WDTO_2S);
+}
 void Forward() {
   PORTE &= ~(1 << PORTE5);          // IN1 LOW
   PORTG |= (1 << PORTG5);           // IN2 HIGH
