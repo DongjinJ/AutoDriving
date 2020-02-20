@@ -1,0 +1,8 @@
+#ifndef _LCD_H
+#define _LCD_H
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+#include "i2c.h"
+

@@ -1,0 +1,72 @@
+#include "main.h"
+#include "stm32f4xx_hal.h"
+#include "LCD.h"
+#include "string.h"
+
+
+void LCD_Clear(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 43 */
+  uint8_t data[2] = {0x1B, 0x43};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+  DelayMicro(15000);
+}
+
+void LCD_CursorOn(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 53 */
+  uint8_t data[2] = {0x1B, 0x53};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+}
+
+void LCD_CursorOff(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 73 */
+  uint8_t data[2] = {0x1B, 0x73};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+}
+
+void LCD_BacklightOn(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 42 */
+  uint8_t data[2] = {0x1B, 0x42};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+}
+
+void LCD_BacklightOff(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 62 */
+  uint8_t data[2] = {0x1B, 0x62};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+}
+
+void LCD_ResetCursor(I2C_HandleTypeDef *hi2c)
+{
+  /* 1B 48 */
+  uint8_t data[2] = {0x1B, 0x48};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 2, 50);
+}
+
+void LCD_SetCursor(I2C_HandleTypeDef *hi2c, uint8_t xPos, uint8_t yPos)
+{
+  /* 1B 4C X Y */
+  uint8_t data[4] = {0x1B, 0x4C, xPos, yPos};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 4, 50);
+  DelayMicro(100);
+}
+
+void LCD_PrintChar(I2C_HandleTypeDef *hi2c, uint8_t xPos, uint8_t yPos, uint8_t chr)
+{
+  /* 1B 4B X Y X Y CHR 0 */
+  uint8_t data[8] = {0x1B, 0x4B, xPos, yPos, xPos, yPos, chr, 0x00};
+  HAL_I2C_Master_Transmit(hi2c, CLCD_ADDRESS, data, 8, 50);
+}
+
+void LCD_PrintString(I2C_HandleTypeDef *hi2c, uint8_t xPos, uint8_t yPos, uint8_t* str)
+{
+  uint8_t len = strlen((const char*)str);
+  for(int8_t i=0; i < len; i++)
+  {
+    LCD_PrintChar(hi2c, xPos+i, yPos, str[i]);
+  }
+}
