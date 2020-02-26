@@ -3238,3 +3238,1031 @@
 2020-02-20 21:20:55,298 [INFO] ProjectBuilder:2595 - Time for Generating toolchain IDE Files: 3947mS.
 2020-02-20 21:20:55,300 [INFO] ProjectBuilder:1703 - Time for Copy CMSIS : 1mS.
 2020-02-20 21:20:55,317 [INFO] ProjectBuilder:1703 - Time for Copy CMSIS : 0mS.
+2020-02-26 21:09:16,592 [INFO] Activator:176 - 
+
+
+2020-02-26 21:09:16,597 [INFO] Activator:177 - !SESSION log4j initialized
+2020-02-26 21:12:18,150 [INFO] Activator:176 - 
+
+
+2020-02-26 21:12:18,156 [INFO] Activator:177 - !SESSION log4j initialized
+2020-02-26 21:13:26,890 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 21:13:26,914 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 21:13:26,922 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 21:13:26,923 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:26,924 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:27,115 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,117 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,122 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,124 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,127 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,396 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 21:13:27,577 [INFO] RulesReader:52 - Compatibility file has been processed (208 Rules)
+2020-02-26 21:13:27,761 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2020-02-26 21:13:27,762 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 21:13:27,763 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 21:13:27,764 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:27,766 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:27,767 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,768 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,769 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,770 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,771 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,771 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,771 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,772 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,772 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,772 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:27,773 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,773 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:27,774 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 21:13:27,894 [INFO] MainPanel:181 - HeapMemory: 331350016
+2020-02-26 21:13:28,041 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 21:13:28,042 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 21:13:28,043 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:28,043 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 21:13:28,044 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,045 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:28,046 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,047 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:28,048 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,048 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:28,048 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,049 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:28,049 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,050 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 21:13:28,050 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,051 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 21:13:28,052 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 21:13:28,088 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 21:13:28,091 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, tutovideos]
+2020-02-26 21:13:28,094 [INFO] PluginManage:292 - Check plugin analytics
+2020-02-26 21:13:28,150 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2020-02-26 21:13:28,152 [INFO] PluginManage:292 - Check plugin clock
+2020-02-26 21:13:28,222 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2020-02-26 21:13:28,222 [INFO] PluginManage:292 - Check plugin ddr
+2020-02-26 21:13:28,227 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2020-02-26 21:13:28,227 [INFO] PluginManage:292 - Check plugin filemanager
+2020-02-26 21:13:28,449 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2020-02-26 21:13:28,450 [INFO] PluginManage:292 - Check plugin ipmanager
+2020-02-26 21:13:28,472 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2020-02-26 21:13:28,473 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2020-02-26 21:13:28,510 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2020-02-26 21:13:28,510 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2020-02-26 21:13:28,598 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2020-02-26 21:13:28,599 [INFO] PluginManage:292 - Check plugin power
+2020-02-26 21:13:28,690 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2020-02-26 21:13:28,691 [INFO] PluginManage:292 - Check plugin projectmanager
+2020-02-26 21:13:28,727 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2020-02-26 21:13:28,728 [INFO] PluginManage:292 - Check plugin thirdparty
+2020-02-26 21:13:28,824 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 25 ms. number of Sw pack : 9
+2020-02-26 21:13:28,842 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2020-02-26 21:13:28,842 [INFO] PluginManage:292 - Check plugin tools
+2020-02-26 21:13:28,855 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2020-02-26 21:13:28,855 [INFO] PluginManage:292 - Check plugin tutovideos
+2020-02-26 21:13:28,871 [INFO] PluginManage:347 - Ignore plugin tutovideos (category:base)
+2020-02-26 21:13:28,872 [INFO] PluginManage:292 - Check plugin updater
+2020-02-26 21:13:28,891 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2020-02-26 21:13:28,892 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2020-02-26 21:13:29,201 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 21:13:29,412 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,413 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2020-02-26 21:13:29,428 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,429 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2020-02-26 21:13:29,455 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,456 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2020-02-26 21:13:29,465 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,466 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2020-02-26 21:13:29,481 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,482 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2020-02-26 21:13:29,497 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,497 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2020-02-26 21:13:29,526 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,527 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2020-02-26 21:13:29,537 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,537 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2020-02-26 21:13:29,560 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,561 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2020-02-26 21:13:29,593 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,594 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2020-02-26 21:13:29,603 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,604 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2020-02-26 21:13:29,626 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,626 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2020-02-26 21:13:29,652 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,653 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2020-02-26 21:13:29,677 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,678 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2020-02-26 21:13:29,702 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,703 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2020-02-26 21:13:29,719 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,719 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2020-02-26 21:13:29,744 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,746 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2020-02-26 21:13:29,772 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,772 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2020-02-26 21:13:29,801 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,802 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2020-02-26 21:13:29,820 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,821 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2020-02-26 21:13:29,847 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,848 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2020-02-26 21:13:29,875 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,876 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2020-02-26 21:13:29,894 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,894 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2020-02-26 21:13:29,916 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,917 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2020-02-26 21:13:29,948 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,955 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2020-02-26 21:13:29,964 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,965 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2020-02-26 21:13:29,993 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:29,994 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2020-02-26 21:13:30,029 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,031 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2020-02-26 21:13:30,056 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,057 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2020-02-26 21:13:30,085 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,086 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2020-02-26 21:13:30,096 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,097 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2020-02-26 21:13:30,121 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,122 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2020-02-26 21:13:30,131 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,132 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2020-02-26 21:13:30,142 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,143 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2020-02-26 21:13:30,154 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,155 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2020-02-26 21:13:30,166 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,167 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2020-02-26 21:13:30,190 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:13:30,191 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2020-02-26 21:13:31,437 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-02-26 21:13:31,438 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2020-02-26 21:13:31,707 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 21:13:31,856 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 21:13:31,857 [ERROR] IntegrityCheckThread:252 - Cannot obtain thirdParties list 21
+2020-02-26 21:13:31,857 [ERROR] IntegrityCheckThread:100 - Unexpected exception IntegrityCheckThread Thread: Updater error
+2020-02-26 21:13:31,858 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:32,146 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 21:13:32,155 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 21:13:32,157 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 21:13:32,169 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-02-26 21:13:32,170 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-02-26 21:13:32,177 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin\STM32_Programmer_CLI.exe -l
+2020-02-26 21:13:33,079 [INFO] MainDdrPanel:93 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-02-26 21:13:33,103 [INFO] Updater:886 - Updater Version found : 5.6.0
+2020-02-26 21:13:33,136 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 21:13:33,215 [INFO] MainUpdater:452 - Copy updater definitions from MX database
+2020-02-26 21:13:33,333 [INFO] MainUpdater:2230 - connection check result : 10
+2020-02-26 21:13:33,334 [INFO] MainUpdater:2874 - Updater definition file requires update
+2020-02-26 21:13:33,337 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2020-02-26 21:13:33,338 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.60
+2020-02-26 21:13:33,361 [INFO] ServerAccessManage:348 - Download File updaters.zip
+2020-02-26 21:13:33,453 [INFO] FileExtend:225 - Unzip File : updaters.zip
+2020-02-26 21:13:33,453 [INFO] FileExtend:240 - Standard Zip Deflate
+2020-02-26 21:13:34,025 [INFO] ServerAccessManage:348 - Download File PacksControlFlags.xml
+2020-02-26 21:13:34,073 [INFO] ServerAccessManage:348 - Download File cubemx.pidx
+2020-02-26 21:13:34,463 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-BLE1.pdsc
+2020-02-26 21:13:35,113 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:35,331 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-GNSS1.pdsc
+2020-02-26 21:13:35,888 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:36,381 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:37,001 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:37,495 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:38,103 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:38,602 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2020-02-26 21:13:38,853 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-NFC4.pdsc
+2020-02-26 21:13:38,976 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-SUBG2.pdsc
+2020-02-26 21:13:39,097 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-ALGOBUILD.pdsc
+2020-02-26 21:13:39,351 [INFO] LoadServerUpdatesThread:301 - End of LoadServerUpdate Thread
+2020-02-26 21:13:39,387 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 6 ms. number of Sw pack : 9
+2020-02-26 21:13:39,452 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:39,466 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2020-02-26 21:13:39,491 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 6 ms. number of Sw pack : 10
+2020-02-26 21:13:39,503 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:39,545 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 4 ms. number of Sw pack : 11
+2020-02-26 21:13:39,556 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:39,610 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 6 ms. number of Sw pack : 12
+2020-02-26 21:13:39,616 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:39,666 [INFO] MainUpdater:2230 - connection check result : 10
+2020-02-26 21:13:39,688 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 7 ms. number of Sw pack : 13
+2020-02-26 21:13:39,708 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 21:13:39,735 [INFO] PopulateThirdPartyThread:48 - Ending populate Thread
+2020-02-26 21:13:39,887 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 10 ms. number of Sw pack : 14
+2020-02-26 21:13:39,890 [INFO] Engine:366 - softwarePackList size : 14
+2020-02-26 21:13:39,904 [INFO] Engine:378 - compute dependency for SwPack X-CUBE-BLE1 have been done, and update is requested
+2020-02-26 21:13:39,993 [INFO] MicroXplorer:390 - Change Database Path : 
+2020-02-26 21:13:39,993 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.60
+2020-02-26 21:13:40,000 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 21:13:40,002 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 293343712 Bytes (657457152)
+2020-02-26 21:13:40,016 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Exception in thread "Thread-25" java.util.ConcurrentModificationException
+2020-02-26 21:13:40,020 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1445)
+2020-02-26 21:13:40,027 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.util.HashMap$ValueIterator.next(HashMap.java:1474)
+2020-02-26 21:13:40,034 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.thirdparty.engine.DependencySolver.searchMatchingCmp(DependencySolver.java:244)
+2020-02-26 21:13:40,050 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.thirdparty.engine.DependencySolver.computeMatchingComponent(DependencySolver.java:203)
+2020-02-26 21:13:40,056 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.thirdparty.engine.Engine.updateDependency(Engine.java:376)
+2020-02-26 21:13:40,068 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.thirdparty.engine.PopulateThirdPartyThread.run(PopulateThirdPartyThread.java:53)
+2020-02-26 21:13:57,021 [INFO] ServerAccessManage:348 - Download File stm32cube_db_v5050.zip
+2020-02-26 21:13:59,257 [INFO] FileExtend:225 - Unzip File : stm32cube_db_v5050.zip
+2020-02-26 21:13:59,260 [INFO] FileExtend:240 - Standard Zip Deflate
+2020-02-26 21:14:09,330 [INFO] LoadServerPackagesThread:160 - End of LoadServerPackages Thread
+2020-02-26 21:14:09,368 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2020-02-26 21:14:09,387 [INFO] MicroXplorer:390 - Change Database Path : C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 21:14:09,388 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.50
+2020-02-26 21:14:09,388 [INFO] OpenFileManager:274 - Change cursor
+2020-02-26 21:14:12,817 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (4000000)
+2020-02-26 21:14:13,552 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 518338568 Bytes (1073741824)
+2020-02-26 21:14:13,554 [INFO] DbMcusXml:110 - Load MCU database from C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/families.xml
+2020-02-26 21:14:15,043 [INFO] DbMcusJson:90 - JSON generation date=Wed Feb 12 00:02:54 KST 2020 (1581433374)
+2020-02-26 21:14:16,228 [INFO] DbMcus:171 - Found 1670 MCUs (1625 are supported by CubeMX, 1625 are visible in CubeMX)
+2020-02-26 21:14:16,231 [INFO] ApiDb:147 - User favorites file not found: C:\Users\Dongjin/.stm32cubemx/favorites.mcus.txt
+2020-02-26 21:14:16,231 [INFO] DbMcus:183 - Set 0 / 0 favorites MCUs
+2020-02-26 21:14:16,447 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 5.0.0
+2020-02-26 21:14:16,448 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.1.0
+2020-02-26 21:14:16,448 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 4.1.0
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.0.0
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.1
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.0
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.1.0
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2020-02-26 21:14:16,449 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.0.0
+2020-02-26 21:14:16,450 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2020-02-26 21:14:16,450 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 7.0.0
+2020-02-26 21:14:16,450 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.13.0
+2020-02-26 21:14:16,450 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.2
+2020-02-26 21:14:16,450 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 5.0.0
+2020-02-26 21:14:16,977 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 21:14:16,981 [INFO] PinOutPanel:1420 - setPackage(STM32F401RETx,LQFP64)
+2020-02-26 21:14:17,913 [INFO] UtilMem:74 - Before build in PCC Used Memory: 464831600 Bytes (1073741824)
+2020-02-26 21:14:18,835 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 21:14:18,952 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 21:14:19,141 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 21:14:19,155 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 21:14:19,653 [INFO] UtilMem:74 - After build in PCC Used Memory: 522087384 Bytes (1073741824)
+2020-02-26 21:14:19,712 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,714 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,715 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,716 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,716 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,716 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,716 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,717 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,717 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,717 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,718 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,719 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,719 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,720 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,721 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,721 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,722 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,722 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,723 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,723 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,724 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,724 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,724 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,725 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,725 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,726 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,727 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,728 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,728 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,729 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,730 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,730 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,731 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,732 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,732 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,733 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,733 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,733 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 21:14:19,824 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2020-02-26 21:14:20,060 [INFO] OpenFileManager:294 - Restore cursor
+2020-02-26 21:15:01,938 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:01,938 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:01,977 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:01,977 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:01,978 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:01,978 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,091 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,092 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,098 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,098 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,131 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:02,132 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:18,862 [INFO] NvicIntPanel:88 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,481x421,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2020-02-26 21:15:22,624 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:22,624 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:22,635 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:15:22,636 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:36,321 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:36,322 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:36,334 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:36,335 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:43,513 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:43,513 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:43,528 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:43,528 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:48,091 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:48,092 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:48,105 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:48,106 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,256 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,257 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,258 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,258 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,343 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,343 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,348 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:18:56,349 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:01,796 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:01,797 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:01,798 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:01,799 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:03,241 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:03,242 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:03,242 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:03,243 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:08,345 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 897323576 Bytes (1073741824)
+2020-02-26 21:19:09,640 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 906234432 Bytes (1073741824)
+2020-02-26 21:19:10,196 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 917246520 Bytes (1073741824)
+2020-02-26 21:19:10,964 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RTC
+2020-02-26 21:19:10,965 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: NVIC
+2020-02-26 21:19:10,965 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: USART
+2020-02-26 21:19:10,966 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: DMA
+2020-02-26 21:19:10,966 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: SYS
+2020-02-26 21:19:10,966 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: GPIO
+2020-02-26 21:19:10,966 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RCC
+2020-02-26 21:19:10,966 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: I2C
+2020-02-26 21:19:10,970 [INFO] CodeGenerator:603 - code generatio: config db path: C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 21:19:10,984 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:10,985 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 21:19:11,660 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp_save
+2020-02-26 21:19:12,310 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp
+2020-02-26 21:19:12,577 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c_save
+2020-02-26 21:19:12,808 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c
+2020-02-26 21:19:12,830 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h_save
+2020-02-26 21:19:12,994 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h
+2020-02-26 21:19:13,281 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 21:19:13,282 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2020-02-26 21:19:13,283 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 21:19:13,304 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c_save
+2020-02-26 21:19:13,443 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c
+2020-02-26 21:19:13,460 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h_save
+2020-02-26 21:19:13,576 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h
+2020-02-26 21:19:13,580 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 21:19:13,581 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2020-02-26 21:19:13,583 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 21:19:13,600 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c_save
+2020-02-26 21:19:13,855 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c
+2020-02-26 21:19:13,874 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h_save
+2020-02-26 21:19:14,026 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h
+2020-02-26 21:19:14,031 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 21:19:14,034 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for RTC
+2020-02-26 21:19:14,035 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 21:19:14,064 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c_save
+2020-02-26 21:19:14,342 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c
+2020-02-26 21:19:14,377 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h_save
+2020-02-26 21:19:14,543 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h
+2020-02-26 21:19:14,550 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 21:19:14,554 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2020-02-26 21:19:14,556 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 21:19:14,579 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c_save
+2020-02-26 21:19:14,815 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c
+2020-02-26 21:19:14,834 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h_save
+2020-02-26 21:19:14,963 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h
+2020-02-26 21:19:14,971 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2020-02-26 21:19:14,973 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 21:19:14,994 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c_save
+2020-02-26 21:19:15,227 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c
+2020-02-26 21:19:15,252 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h_save
+2020-02-26 21:19:15,396 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h
+2020-02-26 21:19:15,426 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c_save
+2020-02-26 21:19:15,604 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c
+2020-02-26 21:19:15,620 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp_save
+2020-02-26 21:19:15,717 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp
+2020-02-26 21:19:15,738 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h_save
+2020-02-26 21:19:15,859 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h
+2020-02-26 21:19:15,910 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h_save
+2020-02-26 21:19:16,067 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h
+2020-02-26 21:19:16,091 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c_save
+2020-02-26 21:19:16,275 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c
+2020-02-26 21:19:17,381 [INFO] ProjectBuilder:2002 - Time for Copy HAL[1] : 439mS.
+2020-02-26 21:19:17,392 [INFO] ProjectBuilder:2727 - Project Generator version: 3.7.1
+2020-02-26 21:19:18,260 [INFO] ConfigFileManager:1066 - The Die is : DIE433
+2020-02-26 21:19:22,037 [INFO] ProjectBuilder:2894 - Time for Generating toolchain IDE Files: 4645mS.
+2020-02-26 21:19:22,039 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 2mS.
+2020-02-26 21:19:22,067 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 0mS.
+2020-02-26 22:35:10,835 [INFO] Activator:176 - 
+
+
+2020-02-26 22:35:10,840 [INFO] Activator:177 - !SESSION log4j initialized
+2020-02-26 23:29:24,102 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 23:29:24,125 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 23:29:24,131 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 23:29:24,132 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,132 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,151 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,153 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,156 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,158 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,161 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,409 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 23:29:24,563 [INFO] RulesReader:52 - Compatibility file has been processed (208 Rules)
+2020-02-26 23:29:24,694 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2020-02-26 23:29:24,695 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 23:29:24,696 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 23:29:24,696 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,698 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,698 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,699 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,699 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,699 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,700 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,700 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,700 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,701 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,701 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,701 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,702 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,702 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,702 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 23:29:24,806 [INFO] MainPanel:181 - HeapMemory: 316669952
+2020-02-26 23:29:24,904 [INFO] DbMcusXml:72 - Set database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/
+2020-02-26 23:29:24,905 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/boardmanager/
+2020-02-26 23:29:24,905 [INFO] DbMcus:235 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,906 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/plugins/mcufinder/images/
+2020-02-26 23:29:24,907 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,908 [INFO] DbMcusAds:85 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,908 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,908 [INFO] DbMcusDocs:108 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,909 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,909 [INFO] DbMcusJson:61 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,909 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,910 [INFO] DbBoardsDocs:97 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,910 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,911 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/
+2020-02-26 23:29:24,911 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,911 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder/ => C:\Users\Dongjin\.stmcufinder\plugins\mcufinder
+2020-02-26 23:29:24,912 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Dongjin\.stmcufinder\plugins\mcufinder//mcu/cs/
+2020-02-26 23:29:24,938 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 23:29:24,941 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, tutovideos]
+2020-02-26 23:29:24,944 [INFO] PluginManage:292 - Check plugin analytics
+2020-02-26 23:29:25,020 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2020-02-26 23:29:25,021 [INFO] PluginManage:292 - Check plugin clock
+2020-02-26 23:29:25,074 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2020-02-26 23:29:25,074 [INFO] PluginManage:292 - Check plugin ddr
+2020-02-26 23:29:25,079 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2020-02-26 23:29:25,079 [INFO] PluginManage:292 - Check plugin filemanager
+2020-02-26 23:29:25,256 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2020-02-26 23:29:25,257 [INFO] PluginManage:292 - Check plugin ipmanager
+2020-02-26 23:29:25,273 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2020-02-26 23:29:25,273 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2020-02-26 23:29:25,312 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2020-02-26 23:29:25,313 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2020-02-26 23:29:25,368 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2020-02-26 23:29:25,369 [INFO] PluginManage:292 - Check plugin power
+2020-02-26 23:29:25,470 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2020-02-26 23:29:25,470 [INFO] PluginManage:292 - Check plugin projectmanager
+2020-02-26 23:29:25,494 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2020-02-26 23:29:25,495 [INFO] PluginManage:292 - Check plugin thirdparty
+2020-02-26 23:29:25,583 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 22 ms. number of Sw pack : 14
+2020-02-26 23:29:25,596 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2020-02-26 23:29:25,597 [INFO] PluginManage:292 - Check plugin tools
+2020-02-26 23:29:25,610 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2020-02-26 23:29:25,611 [INFO] PluginManage:292 - Check plugin tutovideos
+2020-02-26 23:29:25,629 [INFO] PluginManage:347 - Ignore plugin tutovideos (category:base)
+2020-02-26 23:29:25,629 [INFO] PluginManage:292 - Check plugin updater
+2020-02-26 23:29:25,645 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2020-02-26 23:29:25,646 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2020-02-26 23:29:25,947 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 23:29:26,131 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,132 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2020-02-26 23:29:26,150 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,151 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2020-02-26 23:29:26,177 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,177 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2020-02-26 23:29:26,189 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,189 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2020-02-26 23:29:26,203 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,204 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2020-02-26 23:29:26,218 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,219 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2020-02-26 23:29:26,248 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,249 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2020-02-26 23:29:26,258 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,259 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2020-02-26 23:29:26,282 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,283 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2020-02-26 23:29:26,319 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,320 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2020-02-26 23:29:26,329 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,329 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2020-02-26 23:29:26,349 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,350 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2020-02-26 23:29:26,376 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,377 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2020-02-26 23:29:26,404 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,404 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2020-02-26 23:29:26,428 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,428 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2020-02-26 23:29:26,440 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,441 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2020-02-26 23:29:26,463 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,463 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2020-02-26 23:29:26,484 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,484 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2020-02-26 23:29:26,504 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,504 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2020-02-26 23:29:26,523 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,524 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2020-02-26 23:29:26,546 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,547 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2020-02-26 23:29:26,570 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,571 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2020-02-26 23:29:26,587 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,588 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2020-02-26 23:29:26,611 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,612 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2020-02-26 23:29:26,645 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,651 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2020-02-26 23:29:26,660 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,661 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2020-02-26 23:29:26,688 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,689 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2020-02-26 23:29:26,712 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,713 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2020-02-26 23:29:26,734 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,734 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2020-02-26 23:29:26,762 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,762 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2020-02-26 23:29:26,773 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,774 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2020-02-26 23:29:26,795 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,796 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2020-02-26 23:29:26,805 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,806 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2020-02-26 23:29:26,816 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,816 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2020-02-26 23:29:26,825 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,826 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2020-02-26 23:29:26,836 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,837 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2020-02-26 23:29:26,862 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:26,862 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2020-02-26 23:29:27,826 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-02-26 23:29:27,828 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2020-02-26 23:29:28,072 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 23:29:28,374 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 23:29:28,382 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 23:29:28,383 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 23:29:28,392 [INFO] BoardConnectionPanel:3472 - [DDR PANEL] STM32CubeIDE environment
+2020-02-26 23:29:28,393 [INFO] MainDdrPanel:103 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-02-26 23:29:28,400 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin\STM32_Programmer_CLI.exe -l
+2020-02-26 23:29:28,594 [FATAL] Updater:277 - Updater called before beeing initialized
+2020-02-26 23:29:28,594 [ERROR] IntegrityCheckThread:252 - Cannot obtain thirdParties list 21
+2020-02-26 23:29:28,594 [ERROR] IntegrityCheckThread:100 - Unexpected exception IntegrityCheckThread Thread: Updater error
+2020-02-26 23:29:28,595 [INFO] ThirdPartyDb:261 - Close Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2020-02-26 23:29:28,607 [INFO] MainDdrPanel:93 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.3.0.202002181050\tools\bin
+2020-02-26 23:29:28,690 [INFO] Updater:886 - Updater Version found : 5.6.0
+2020-02-26 23:29:28,727 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639
+2020-02-26 23:29:29,850 [INFO] MainUpdater:2230 - connection check result : 10
+2020-02-26 23:29:29,851 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2020-02-26 23:29:29,852 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.60
+2020-02-26 23:29:29,907 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2020-02-26 23:29:30,065 [INFO] MainUpdater:2230 - connection check result : 10
+2020-02-26 23:29:30,245 [INFO] MicroXplorer:390 - Change Database Path : 
+2020-02-26 23:29:30,246 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.60
+2020-02-26 23:29:30,250 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 23:29:30,251 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 270188608 Bytes (316669952)
+2020-02-26 23:29:30,261 [INFO] MicroXplorer:390 - Change Database Path : C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 23:29:30,261 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.50
+2020-02-26 23:29:30,262 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] *****Project Manager Settings
+2020-02-26 23:29:32,844 [INFO] OpenFileManager:274 - Change cursor
+2020-02-26 23:29:35,590 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,591 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Channel) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,591 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,592 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,592 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,592 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,593 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,594 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,594 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,594 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOMode) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,594 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,594 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (FIFOThreshold) has invalid value (null)
+2020-02-26 23:29:35,595 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,595 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemBurst) has invalid value (null)
+2020-02-26 23:29:35,596 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has Id (I2C1_TX) currently not set
+2020-02-26 23:29:35,596 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphBurst) has invalid value (null)
+2020-02-26 23:29:35,600 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (4000000)
+2020-02-26 23:29:35,894 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 155773976 Bytes (316669952)
+2020-02-26 23:29:35,896 [INFO] DbMcusXml:110 - Load MCU database from C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.6.0.202002181639\\db\/mcu/families.xml
+2020-02-26 23:29:37,369 [INFO] DbMcusJson:90 - JSON generation date=Wed Feb 12 00:02:54 KST 2020 (1581433374)
+2020-02-26 23:29:38,213 [INFO] DbMcus:171 - Found 1670 MCUs (1625 are supported by CubeMX, 1625 are visible in CubeMX)
+2020-02-26 23:29:38,214 [INFO] ApiDb:147 - User favorites file not found: C:\Users\Dongjin/.stm32cubemx/favorites.mcus.txt
+2020-02-26 23:29:38,214 [INFO] DbMcus:183 - Set 0 / 0 favorites MCUs
+2020-02-26 23:29:38,233 [INFO] ThirdPartyDb:295 - Open Third Party DataBase File (C:/Users/Dongjin/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 7 ms. number of Sw pack : 14
+2020-02-26 23:29:38,361 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 5.0.0
+2020-02-26 23:29:38,361 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.1.0
+2020-02-26 23:29:38,362 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 4.1.0
+2020-02-26 23:29:38,363 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 1.0.0
+2020-02-26 23:29:38,363 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.1
+2020-02-26 23:29:38,363 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.0
+2020-02-26 23:29:38,363 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 4.1.0
+2020-02-26 23:29:38,363 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.0.0
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.4.0
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 7.0.0
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.13.0
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.5.2
+2020-02-26 23:29:38,364 [INFO] ThirdParty:899 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 5.0.0
+2020-02-26 23:29:38,795 [INFO] PinOutPanel:1420 - setPackage(No Configuration,No Configuration)
+2020-02-26 23:29:38,800 [INFO] PinOutPanel:1420 - setPackage(STM32F401RETx,LQFP64)
+2020-02-26 23:29:39,460 [INFO] UtilMem:74 - Before build in PCC Used Memory: 292602944 Bytes (365953024)
+2020-02-26 23:29:40,277 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 23:29:40,351 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 23:29:40,423 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 23:29:40,429 [INFO] SharedServices:71 - Folder for power plug-in: C:/Users/Dongjin/.stm32cubemx/plugins/power
+2020-02-26 23:29:40,795 [INFO] UtilMem:74 - After build in PCC Used Memory: 242046272 Bytes (365953024)
+2020-02-26 23:29:40,832 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,832 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,833 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,833 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,833 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,834 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,834 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,834 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,835 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,835 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,835 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,836 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,836 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,836 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,836 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,837 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,837 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,838 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,838 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,838 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,839 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,839 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,840 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,841 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,841 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,845 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,846 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,846 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,847 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,847 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,849 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,850 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,850 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,851 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,851 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,851 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,852 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,852 [INFO] IPUIPlugin:65 - create IPUIPlugin
+2020-02-26 23:29:40,868 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:40,869 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:40,917 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2020-02-26 23:29:41,057 [INFO] OpenFileManager:294 - Restore cursor
+2020-02-26 23:29:41,087 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 254629184 Bytes (365953024)
+2020-02-26 23:29:41,193 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,193 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,194 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,194 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,270 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,270 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,271 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:29:41,272 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:32:21,763 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 276109736 Bytes (365953024)
+2020-02-26 23:32:22,916 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 286069168 Bytes (365953024)
+2020-02-26 23:32:24,601 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 189187984 Bytes (365953024)
+2020-02-26 23:32:25,276 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RTC
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: NVIC
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: USART
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: DMA
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: TIM1_8
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: SYS
+2020-02-26 23:32:25,277 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: GPIO
+2020-02-26 23:32:25,278 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RCC
+2020-02-26 23:32:25,278 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: I2C
+2020-02-26 23:32:25,281 [INFO] CodeGenerator:603 - code generatio: config db path: C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 23:32:25,293 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:32:25,293 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:32:25,788 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp_save
+2020-02-26 23:32:26,450 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp
+2020-02-26 23:32:26,770 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c_save
+2020-02-26 23:32:27,026 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c
+2020-02-26 23:32:27,061 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h_save
+2020-02-26 23:32:27,202 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h
+2020-02-26 23:32:27,697 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:32:27,698 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2020-02-26 23:32:27,699 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:27,860 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c_save
+2020-02-26 23:32:28,262 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c
+2020-02-26 23:32:28,379 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h_save
+2020-02-26 23:32:29,011 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h
+2020-02-26 23:32:29,019 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:32:29,021 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2020-02-26 23:32:29,023 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:29,068 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c_save
+2020-02-26 23:32:30,036 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c
+2020-02-26 23:32:30,292 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h_save
+2020-02-26 23:32:30,672 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h
+2020-02-26 23:32:30,685 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:32:30,686 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for RTC
+2020-02-26 23:32:30,688 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:30,710 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c_save
+2020-02-26 23:32:31,406 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c
+2020-02-26 23:32:31,448 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h_save
+2020-02-26 23:32:32,007 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h
+2020-02-26 23:32:32,027 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:32:32,030 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2020-02-26 23:32:32,031 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:32,058 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c_save
+2020-02-26 23:32:32,587 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c
+2020-02-26 23:32:32,634 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h_save
+2020-02-26 23:32:32,849 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h
+2020-02-26 23:32:32,879 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:32:32,882 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2020-02-26 23:32:32,883 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:32,903 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c_save
+2020-02-26 23:32:33,126 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c
+2020-02-26 23:32:33,152 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h_save
+2020-02-26 23:32:33,268 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h
+2020-02-26 23:32:33,274 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2020-02-26 23:32:33,275 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:32:33,299 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c_save
+2020-02-26 23:32:33,739 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c
+2020-02-26 23:32:33,873 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h_save
+2020-02-26 23:32:34,001 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h
+2020-02-26 23:32:34,028 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c_save
+2020-02-26 23:32:34,282 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c
+2020-02-26 23:32:34,313 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp_save
+2020-02-26 23:32:34,447 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp
+2020-02-26 23:32:34,474 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h_save
+2020-02-26 23:32:34,599 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h
+2020-02-26 23:32:34,671 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h_save
+2020-02-26 23:32:34,883 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h
+2020-02-26 23:32:35,129 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c_save
+2020-02-26 23:32:35,462 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c
+2020-02-26 23:32:36,839 [INFO] ProjectBuilder:2002 - Time for Copy HAL[1] : 301mS.
+2020-02-26 23:32:36,850 [INFO] ProjectBuilder:2727 - Project Generator version: 3.7.1
+2020-02-26 23:32:37,478 [INFO] ConfigFileManager:1066 - The Die is : DIE433
+2020-02-26 23:32:41,625 [INFO] ProjectBuilder:2894 - Time for Generating toolchain IDE Files: 4775mS.
+2020-02-26 23:32:41,628 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 2mS.
+2020-02-26 23:32:41,670 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 1mS.
+2020-02-26 23:51:42,934 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 308214984 Bytes (795869184)
+2020-02-26 23:51:44,638 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 319227072 Bytes (795869184)
+2020-02-26 23:51:44,981 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 333380808 Bytes (795869184)
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RTC
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: NVIC
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: USART
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: DMA
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: TIM1_8
+2020-02-26 23:51:45,258 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: SYS
+2020-02-26 23:51:45,259 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: GPIO
+2020-02-26 23:51:45,259 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RCC
+2020-02-26 23:51:45,259 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: I2C
+2020-02-26 23:51:45,262 [INFO] CodeGenerator:603 - code generatio: config db path: C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 23:51:45,265 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:51:45,265 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:51:45,266 [INFO] Argument:278 - Argument : hdmavalue: null
+2020-02-26 23:51:45,266 [INFO] Argument:280 - 	 sub Args: 
+2020-02-26 23:51:45,266 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Stream6
+2020-02-26 23:51:45,266 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Stream6
+2020-02-26 23:51:45,266 [INFO] Argument:278 - Argument : Initvalue: null
+2020-02-26 23:51:45,266 [INFO] Argument:280 - 	 sub Args: 
+2020-02-26 23:51:45,266 [INFO] Argument:278 - Argument : Channelvalue: DMA_CHANNEL_1
+2020-02-26 23:51:45,267 [INFO] Argument:288 - Argument : Channelvalue: DMA_CHANNEL_1
+2020-02-26 23:51:45,267 [INFO] Argument:278 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2020-02-26 23:51:45,267 [INFO] Argument:288 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2020-02-26 23:51:45,267 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2020-02-26 23:51:45,267 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2020-02-26 23:51:45,267 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : FIFOModevalue: DMA_FIFOMODE_ENABLE
+2020-02-26 23:51:45,268 [INFO] Argument:288 - Argument : FIFOModevalue: DMA_FIFOMODE_ENABLE
+2020-02-26 23:51:45,268 [INFO] Argument:278 - Argument : FIFOThresholdvalue: DMA_FIFO_THRESHOLD_FULL
+2020-02-26 23:51:45,269 [INFO] Argument:288 - Argument : FIFOThresholdvalue: DMA_FIFO_THRESHOLD_FULL
+2020-02-26 23:51:45,269 [INFO] Argument:278 - Argument : MemBurstvalue: DMA_MBURST_SINGLE
+2020-02-26 23:51:45,269 [INFO] Argument:288 - Argument : MemBurstvalue: DMA_MBURST_SINGLE
+2020-02-26 23:51:45,269 [INFO] Argument:278 - Argument : PeriphBurstvalue: DMA_PBURST_SINGLE
+2020-02-26 23:51:45,269 [INFO] Argument:288 - Argument : PeriphBurstvalue: DMA_PBURST_SINGLE
+2020-02-26 23:51:45,269 [INFO] Argument:278 - Argument : Lockvalue: null
+2020-02-26 23:51:45,269 [INFO] Argument:288 - Argument : Lockvalue: null
+2020-02-26 23:51:45,269 [INFO] Argument:278 - Argument : Statevalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:288 - Argument : Statevalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:278 - Argument : Parentvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:288 - Argument : Parentvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:278 - Argument : XferM1CpltCallbackvalue: null
+2020-02-26 23:51:45,270 [INFO] Argument:288 - Argument : XferM1CpltCallbackvalue: null
+2020-02-26 23:51:45,271 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2020-02-26 23:51:45,271 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2020-02-26 23:51:45,271 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2020-02-26 23:51:45,271 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2020-02-26 23:51:45,493 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp_save
+2020-02-26 23:51:45,586 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp
+2020-02-26 23:51:45,629 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c_save
+2020-02-26 23:51:45,905 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c
+2020-02-26 23:51:45,934 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h_save
+2020-02-26 23:51:46,106 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h
+2020-02-26 23:51:46,289 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:51:46,290 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2020-02-26 23:51:46,291 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:46,344 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c_save
+2020-02-26 23:51:46,456 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c
+2020-02-26 23:51:46,475 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h_save
+2020-02-26 23:51:46,595 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h
+2020-02-26 23:51:46,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:51:46,604 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2020-02-26 23:51:46,605 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:46,622 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c_save
+2020-02-26 23:51:46,781 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c
+2020-02-26 23:51:46,797 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h_save
+2020-02-26 23:51:46,948 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h
+2020-02-26 23:51:46,956 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:51:46,957 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for RTC
+2020-02-26 23:51:46,958 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:46,974 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c_save
+2020-02-26 23:51:47,130 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c
+2020-02-26 23:51:47,153 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h_save
+2020-02-26 23:51:47,561 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h
+2020-02-26 23:51:47,631 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:51:47,637 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2020-02-26 23:51:47,638 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:47,678 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c_save
+2020-02-26 23:51:47,877 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c
+2020-02-26 23:51:47,895 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h_save
+2020-02-26 23:51:48,010 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h
+2020-02-26 23:51:48,018 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:51:48,019 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2020-02-26 23:51:48,020 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:48,038 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c_save
+2020-02-26 23:51:48,203 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c
+2020-02-26 23:51:48,226 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h_save
+2020-02-26 23:51:48,335 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h
+2020-02-26 23:51:48,340 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2020-02-26 23:51:48,341 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:51:48,354 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c_save
+2020-02-26 23:51:48,570 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c
+2020-02-26 23:51:48,585 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h_save
+2020-02-26 23:51:48,696 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h
+2020-02-26 23:51:48,720 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c_save
+2020-02-26 23:51:48,850 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c
+2020-02-26 23:51:48,863 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp_save
+2020-02-26 23:51:48,939 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp
+2020-02-26 23:51:48,952 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h_save
+2020-02-26 23:51:49,056 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h
+2020-02-26 23:51:49,093 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h_save
+2020-02-26 23:51:49,192 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h
+2020-02-26 23:51:49,212 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c_save
+2020-02-26 23:51:49,374 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c
+2020-02-26 23:51:50,421 [INFO] ProjectBuilder:2002 - Time for Copy HAL[1] : 386mS.
+2020-02-26 23:51:50,432 [INFO] ProjectBuilder:2727 - Project Generator version: 3.7.1
+2020-02-26 23:51:50,842 [INFO] ConfigFileManager:1066 - The Die is : DIE433
+2020-02-26 23:51:53,195 [INFO] ProjectBuilder:2894 - Time for Generating toolchain IDE Files: 2764mS.
+2020-02-26 23:51:53,198 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 2mS.
+2020-02-26 23:51:53,215 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 0mS.
+2020-02-26 23:56:34,608 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 258362064 Bytes (905969664)
+2020-02-26 23:56:35,700 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 269374152 Bytes (905969664)
+2020-02-26 23:56:36,041 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 282479312 Bytes (905969664)
+2020-02-26 23:56:36,333 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RTC
+2020-02-26 23:56:36,333 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: NVIC
+2020-02-26 23:56:36,333 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: USART
+2020-02-26 23:56:36,333 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: DMA
+2020-02-26 23:56:36,334 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: TIM1_8
+2020-02-26 23:56:36,334 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: SYS
+2020-02-26 23:56:36,334 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: GPIO
+2020-02-26 23:56:36,334 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: RCC
+2020-02-26 23:56:36,334 [INFO] BlockDiagram:2671 - set Specific Code input for plugin: I2C
+2020-02-26 23:56:36,337 [INFO] CodeGenerator:603 - code generatio: config db path: C:/Users/Dongjin/.stm32cubemx/databases/DB.5.0.50/db/
+2020-02-26 23:56:36,340 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2020-02-26 23:56:36,341 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2020-02-26 23:56:36,342 [INFO] Argument:278 - Argument : hdmavalue: null
+2020-02-26 23:56:36,342 [INFO] Argument:280 - 	 sub Args: 
+2020-02-26 23:56:36,342 [INFO] Argument:278 - Argument : Instancevalue: DMA1_Stream6
+2020-02-26 23:56:36,342 [INFO] Argument:288 - Argument : Instancevalue: DMA1_Stream6
+2020-02-26 23:56:36,342 [INFO] Argument:278 - Argument : Initvalue: null
+2020-02-26 23:56:36,342 [INFO] Argument:280 - 	 sub Args: 
+2020-02-26 23:56:36,343 [INFO] Argument:278 - Argument : Channelvalue: DMA_CHANNEL_1
+2020-02-26 23:56:36,343 [INFO] Argument:288 - Argument : Channelvalue: DMA_CHANNEL_1
+2020-02-26 23:56:36,343 [INFO] Argument:278 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2020-02-26 23:56:36,343 [INFO] Argument:288 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2020-02-26 23:56:36,343 [INFO] Argument:278 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2020-02-26 23:56:36,343 [INFO] Argument:288 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2020-02-26 23:56:36,343 [INFO] Argument:278 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2020-02-26 23:56:36,344 [INFO] Argument:288 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2020-02-26 23:56:36,344 [INFO] Argument:278 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2020-02-26 23:56:36,344 [INFO] Argument:288 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2020-02-26 23:56:36,344 [INFO] Argument:278 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2020-02-26 23:56:36,344 [INFO] Argument:288 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2020-02-26 23:56:36,344 [INFO] Argument:278 - Argument : Modevalue: DMA_CIRCULAR
+2020-02-26 23:56:36,344 [INFO] Argument:288 - Argument : Modevalue: DMA_CIRCULAR
+2020-02-26 23:56:36,344 [INFO] Argument:278 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2020-02-26 23:56:36,344 [INFO] Argument:288 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2020-02-26 23:56:36,345 [INFO] Argument:278 - Argument : FIFOModevalue: DMA_FIFOMODE_ENABLE
+2020-02-26 23:56:36,345 [INFO] Argument:288 - Argument : FIFOModevalue: DMA_FIFOMODE_ENABLE
+2020-02-26 23:56:36,345 [INFO] Argument:278 - Argument : FIFOThresholdvalue: DMA_FIFO_THRESHOLD_FULL
+2020-02-26 23:56:36,345 [INFO] Argument:288 - Argument : FIFOThresholdvalue: DMA_FIFO_THRESHOLD_FULL
+2020-02-26 23:56:36,345 [INFO] Argument:278 - Argument : MemBurstvalue: DMA_MBURST_SINGLE
+2020-02-26 23:56:36,345 [INFO] Argument:288 - Argument : MemBurstvalue: DMA_MBURST_SINGLE
+2020-02-26 23:56:36,345 [INFO] Argument:278 - Argument : PeriphBurstvalue: DMA_PBURST_SINGLE
+2020-02-26 23:56:36,345 [INFO] Argument:288 - Argument : PeriphBurstvalue: DMA_PBURST_SINGLE
+2020-02-26 23:56:36,345 [INFO] Argument:278 - Argument : Lockvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:288 - Argument : Lockvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:278 - Argument : Statevalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:288 - Argument : Statevalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:278 - Argument : Parentvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:288 - Argument : Parentvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:278 - Argument : XferCpltCallbackvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:288 - Argument : XferCpltCallbackvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:278 - Argument : XferHalfCpltCallbackvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:288 - Argument : XferHalfCpltCallbackvalue: null
+2020-02-26 23:56:36,346 [INFO] Argument:278 - Argument : XferM1CpltCallbackvalue: null
+2020-02-26 23:56:36,347 [INFO] Argument:288 - Argument : XferM1CpltCallbackvalue: null
+2020-02-26 23:56:36,347 [INFO] Argument:278 - Argument : XferErrorCallbackvalue: null
+2020-02-26 23:56:36,347 [INFO] Argument:288 - Argument : XferErrorCallbackvalue: null
+2020-02-26 23:56:36,347 [INFO] Argument:278 - Argument : ErrorCodevalue: null
+2020-02-26 23:56:36,347 [INFO] Argument:288 - Argument : ErrorCodevalue: null
+2020-02-26 23:56:36,567 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp_save
+2020-02-26 23:56:36,659 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\license.tmp
+2020-02-26 23:56:36,685 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c_save
+2020-02-26 23:56:36,794 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\gpio.c
+2020-02-26 23:56:36,811 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h_save
+2020-02-26 23:56:36,906 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\gpio.h
+2020-02-26 23:56:37,070 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:56:37,072 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for DMA
+2020-02-26 23:56:37,074 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:37,102 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c_save
+2020-02-26 23:56:37,269 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\dma.c
+2020-02-26 23:56:37,285 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h_save
+2020-02-26 23:56:37,403 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\dma.h
+2020-02-26 23:56:37,408 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:56:37,410 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2020-02-26 23:56:37,411 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:37,431 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c_save
+2020-02-26 23:56:37,582 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\i2c.c
+2020-02-26 23:56:37,597 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h_save
+2020-02-26 23:56:37,702 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\i2c.h
+2020-02-26 23:56:37,707 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:56:37,708 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for RTC
+2020-02-26 23:56:37,709 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:37,722 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c_save
+2020-02-26 23:56:37,860 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\rtc.c
+2020-02-26 23:56:37,879 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h_save
+2020-02-26 23:56:38,023 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\rtc.h
+2020-02-26 23:56:38,032 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:56:38,035 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2020-02-26 23:56:38,036 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:38,115 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c_save
+2020-02-26 23:56:38,341 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\tim.c
+2020-02-26 23:56:38,359 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h_save
+2020-02-26 23:56:38,489 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\tim.h
+2020-02-26 23:56:38,497 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2020-02-26 23:56:38,499 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2020-02-26 23:56:38,501 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:38,518 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c_save
+2020-02-26 23:56:38,645 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\usart.c
+2020-02-26 23:56:38,663 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h_save
+2020-02-26 23:56:38,771 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\usart.h
+2020-02-26 23:56:38,777 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2020-02-26 23:56:38,778 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2020-02-26 23:56:38,792 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c_save
+2020-02-26 23:56:38,930 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_it.c
+2020-02-26 23:56:38,948 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h_save
+2020-02-26 23:56:39,060 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_it.h
+2020-02-26 23:56:39,083 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c_save
+2020-02-26 23:56:39,222 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\stm32f4xx_hal_msp.c
+2020-02-26 23:56:39,236 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp_save
+2020-02-26 23:56:39,332 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\MXTmpFiles\system.tmp
+2020-02-26 23:56:39,349 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h_save
+2020-02-26 23:56:39,455 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\stm32f4xx_hal_conf.h
+2020-02-26 23:56:39,488 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h_save
+2020-02-26 23:56:39,597 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Inc\main.h
+2020-02-26 23:56:39,615 [INFO] CodeEngine:188 - oldGeneratedFile, C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c_save
+2020-02-26 23:56:39,742 [INFO] CodeEngine:206 - Generated code: C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\Src\main.c
+2020-02-26 23:56:40,638 [INFO] ProjectBuilder:2002 - Time for Copy HAL[1] : 268mS.
+2020-02-26 23:56:40,645 [INFO] ProjectBuilder:2727 - Project Generator version: 3.7.1
+2020-02-26 23:56:40,960 [INFO] ConfigFileManager:1066 - The Die is : DIE433
+2020-02-26 23:56:42,690 [INFO] ProjectBuilder:2894 - Time for Generating toolchain IDE Files: 2045mS.
+2020-02-26 23:56:42,692 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 2mS.
+2020-02-26 23:56:42,714 [INFO] ProjectBuilder:1878 - Time for Copy CMSIS : 0mS.

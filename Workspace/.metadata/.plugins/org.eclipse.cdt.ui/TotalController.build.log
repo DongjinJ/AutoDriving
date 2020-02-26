@@ -1,10 +1,29 @@
-21:33:54 **** Incremental Build of configuration Debug for project TotalController ****
+23:58:44 **** Incremental Build of configuration Debug for project TotalController ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/LCD_HD44780_I2C.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/LCD_HD44780_I2C.d" -MT"Src/LCD_HD44780_I2C.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/LCD_HD44780_I2C.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:8: warning: unused variable 'i' [-Wunused-variable]
+  float i;
+        ^
+../Src/LCD_HD44780_I2C.c: In function 'LCD_WriteByte':
+../Src/LCD_HD44780_I2C.c:136:2: warning: implicit declaration of function 'Delay_us' [-Wimplicit-function-declaration]
+  Delay_us(120); // Wait for data processing
+  ^~~~~~~~
+arm-none-eabi-gcc -o "TotalController.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TotalController.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TotalController.elf
+ 
+arm-none-eabi-objdump -h -S  TotalController.elf  > "TotalController.list"
+arm-none-eabi-objcopy  -O binary  TotalController.elf  "TotalController.bin"
 arm-none-eabi-size   TotalController.elf 
    text	   data	    bss	    dec	    hex	filename
-  16116	     60	   1748	  17924	   4604	TotalController.elf
+  18880	     60	   1932	  20872	   5188	TotalController.elf
 Finished building: default.size.stdout
  
+Finished building: TotalController.bin
+ 
+Finished building: TotalController.list
+ 
 
-21:33:57 Build Finished. 0 errors, 0 warnings. (took 2s.506ms)
+23:58:49 Build Finished. 0 errors, 2 warnings. (took 5s.296ms)
 

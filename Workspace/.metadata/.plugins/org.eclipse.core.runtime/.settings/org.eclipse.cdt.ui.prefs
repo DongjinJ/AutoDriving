@@ -1,4 +1,13 @@
 eclipse.preferences.version=1
+semanticHighlighting.class.color=255,128,64
+semanticHighlighting.enum.enabled=true
+semanticHighlighting.enumClass.color=128,128,0
+semanticHighlighting.function.color=128,0,255
+semanticHighlighting.function.enabled=true
+semanticHighlighting.functionDeclaration.color=128,0,255
+semanticHighlighting.macroDefinition.color=255,0,128
+semanticHighlighting.macroDefinition.enabled=true
+sourceHoverBackgroundColor=255,255,225
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

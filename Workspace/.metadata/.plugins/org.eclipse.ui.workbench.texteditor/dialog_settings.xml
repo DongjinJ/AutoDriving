@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="HAL_TIM_PWM_Init"/>
+		<item key="selection" value="Delay_us"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="HAL_Delay"/>
+			<item value="Delay_us"/>
+			<item value="delay"/>
 			<item value="HAL_TIM_PWM_Init"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Delay_us"/>
+			<item value="HAL_Delay"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

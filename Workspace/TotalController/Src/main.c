@@ -20,6 +20,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "i2c.h"
 #include "rtc.h"
 #include "tim.h"
 #include "usart.h"
@@ -27,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "LCD_HD44780_I2C.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,15 +100,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART6_UART_Init();
   MX_RTC_Init();
-  MX_TIM1_Init();
+  MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start(&htim3);
+  LCD_Init(&hi2c1);
   HAL_UART_Transmit(&huart6, txBuffer, txLen, 0xFFFF);
   HAL_NVIC_EnableIRQ(USART6_IRQn);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
   /* USER CODE END 2 */
  
  
@@ -118,10 +121,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  for(i = 0;i < 1;i+=0.1){
-		  TIM1->CCR1 = 1000 * i;
-	  	  HAL_Delay(1000);
-	  }
+	  LCD_Cls();
+	  LCD_Locate(0,0);
+	  LCD_String("Jisu");
+	  LCD_Locate(0,1);
+	  LCD_String("Stupid");
+	  HAL_Delay(1000);
+	  LCD_Locate(0,2);
+	  LCD_String("Jisu");
+	  LCD_Locate(0,3);
+	  LCD_String("Stupid");
   }
   /* USER CODE END 3 */
 }
