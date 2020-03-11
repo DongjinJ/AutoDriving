@@ -1,0 +1,8 @@
+1583833363514	Rename resource 'Config.cpp'
+1583834888754	Move 'Motor' to 'Middlewares'
+1583834895231	Move 'Motor' to 'TotalController'
+1583835792319	Rename resource 'Motor'
+1583835803225	Move 2 resources to 'Motor'
+1583836349957	Move 'Module' to 'Inc'
+1583837191711	Move 'MotorControl.h' to 'Inc'
+1583837978698	Move 'MotorControl.h' to 'Inc'

@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dma.h"
 #include "i2c.h"
 #include "rtc.h"
 #include "tim.h"
@@ -29,7 +28,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "Config.h"
 #include "LCD_HD44780_I2C.h"
+#include "MotorControl.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -78,9 +79,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	float i;
+	RTC_TimeTypeDef sTime;
+	RTC_DateTypeDef sDate;
+
   /* USER CODE END 1 */
-  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -100,19 +102,33 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_USART6_UART_Init();
   MX_RTC_Init();
   MX_I2C1_Init();
   MX_TIM3_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim3);
+  HAL_Delay(1000);
   LCD_Init(&hi2c1);
-  HAL_UART_Transmit(&huart6, txBuffer, txLen, 0xFFFF);
+//  HAL_UART_Transmit(&huart6, txBuffer, txLen, 0xFFFF);
   HAL_NVIC_EnableIRQ(USART6_IRQn);
+  sDate.Year = 20;
+  sDate.Month = 3;
+  sDate.Date = 11;
+
+  sTime.Hours = 19;
+  sTime.Minutes = 38;
+  sTime.Seconds = 0;
+
+  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+  HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+#if (Project_Motor_Spec	== Servo_DC)
+  Servo_Init(&htim1, TIM_CHANNEL_1);
+#else
+
+#endif
   /* USER CODE END 2 */
- 
- 
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -121,16 +137,30 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
 	  LCD_Cls();
 	  LCD_Locate(0,0);
-	  LCD_String("Jisu");
+	  LCD_Int(sDate.Year);
+	  LCD_String(".");
+	  LCD_Int(sDate.Month);
+	  LCD_String(".");
+	  LCD_Int(sDate.Date);
+
 	  LCD_Locate(0,1);
-	  LCD_String("Stupid");
+	  LCD_Int(sTime.Hours);
+	  LCD_String(":");
+	  LCD_Int(sTime.Minutes);
+	  LCD_String(":");
+	  LCD_Int(sTime.Seconds);
+
+	  Servo_Angle(-90);
 	  HAL_Delay(1000);
-	  LCD_Locate(0,2);
-	  LCD_String("Jisu");
-	  LCD_Locate(0,3);
-	  LCD_String("Stupid");
+	  Servo_Angle(0);
+	  HAL_Delay(1000);
+	  Servo_Angle(90);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -190,15 +220,18 @@ void SystemClock_Config(void)
 void UART6_IRQHandler(void){
 	HAL_UART_IRQHandler(&huart6);
 }
+
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 	sndFlag = 1;
 	txLen = sizeof(txBuffer) - 1;
 //	HAL_UART_Transmit(&huart6, txBuffer, txLen, 0xFFFF);
 }
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	rcvFlag = 1;
 	HAL_UART_Transmit_IT(&huart6, rxBuffer, 1);
 }
+
 /* USER CODE END 4 */
 
 /**

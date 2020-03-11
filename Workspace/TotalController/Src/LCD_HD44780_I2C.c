@@ -128,7 +128,7 @@ void LCD_WriteByte(uint8_t data)
 	LCD_SetEN();
 	LCD_SetDataPort(data >> 4);
 	LCD_ClearEN();
-//	Delay_us(120);
+	Delay_us(120);
 	LCD_SetEN();
 	LCD_SetDataPort(data);
 	LCD_ClearEN();

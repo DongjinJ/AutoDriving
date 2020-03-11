@@ -1,0 +1,3 @@
+MotorControl.c:8:6:Servo_Init	16	static
+MotorControl.c:13:6:Servo_Angle	24	static
+MotorControl.c:20:6:Motor_Power	16	static

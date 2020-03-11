@@ -1,0 +1,5 @@
+#ifndef __MOTORCONTROL_H__
+#define __MOTORCONTROL_H__
+
+extern void Servo_Angle(int8_t angle);
+#endif

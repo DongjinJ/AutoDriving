@@ -30,9 +30,9 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h ../Inc/dma.h \
- ../Inc/main.h ../Inc/i2c.h ../Inc/rtc.h ../Inc/tim.h ../Inc/usart.h \
- ../Inc/gpio.h ../Inc/LCD_HD44780_I2C.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h ../Inc/i2c.h \
+ ../Inc/main.h ../Inc/rtc.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h \
+ ../Inc/Config.h ../Inc/LCD_HD44780_I2C.h ../Inc/MotorControl.h
 
 ../Inc/main.h:
 
@@ -100,11 +100,9 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-../Inc/dma.h:
+../Inc/i2c.h:
 
 ../Inc/main.h:
-
-../Inc/i2c.h:
 
 ../Inc/rtc.h:
 
@@ -114,4 +112,8 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Inc/gpio.h:
 
+../Inc/Config.h:
+
 ../Inc/LCD_HD44780_I2C.h:
+
+../Inc/MotorControl.h:

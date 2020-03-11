@@ -1,0 +1,18 @@
+#ifndef __Config_H__
+#define __Config_H__
+
+#define DC_Alone		(0U)
+#define Servo_DC		(1U)
+
+#ifndef DISABLE
+#define DISABLE			0
+#endif
+#ifndef ENABLE
+#define ENABLE			1
+#endif
+
+#define Servo_MAXus		1880
+#define Servo_MINus		520
+
+#define Project_Motor_Spec	Servo_DC
+#endif

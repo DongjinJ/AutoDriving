@@ -1,0 +1,11 @@
+#ifndef __MOTORCONTROL_H__
+#define __MOTORCONTROL_H__
+
+#include "Config.h"
+#include "stdio.h"
+#include "stm32f4xx_hal.h"
+
+extern void Servo_Attatch(TIM_HandleTypeDef *htim, uint32_t channel);
+extern void Servo_Angle(int8_t angle);
+
+#endif

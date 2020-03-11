@@ -1,0 +1,2 @@
+extern void Servo_Attatch(TIM_HandleTypeDef *htim, uint32_t channel);
+extern void Servo_Angle(int8_t angle);
