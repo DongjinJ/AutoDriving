@@ -1,6 +1,0 @@
-#ifndef __MOTORCONTROL_H__
-#define __MOTORCONTROL_H__
-
-void Servo_Attatch(TIM_HandleTypeDef *htim, uint32_t channel);
-void Servo_Angle(int8_t angle);
-#endif

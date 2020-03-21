@@ -1,9 +1,0 @@
-#include "MotorControl.h"
-#include "Config.h"
-
-void Servo_Angle(int8_t angle){
-	uint16_t value;
-
-	value = (float)(angle + 90) / 180 * Servo_MAXus + Servo_MINus;
-	TIM1->CCR1 = value;
-}

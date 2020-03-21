@@ -1,6 +1,5 @@
 /* Servo Left/center/Right: 150/190/230 +-40 */
 /*  include */
-#include <avr/wdt.h>
 #include <LowPower.h>
 
 /* Configuration */
@@ -16,6 +15,8 @@
 #define SamplingTime 0.1
 
 #define Center 190
+#define Servo_MAXus     (1880U) * 2
+#define Servo_MINus     (520U) * 2
 
 #define cdSensor A0
 #define irSensor A1
@@ -45,7 +46,7 @@ void Watchdog_Init();
 /* Motor Function */
 void Forward();
 void Backward();
-void Servo_power(int value);
+void Servo_power(int angle);
 void Motor_power(int value);
 void AEB_system();
 
@@ -90,11 +91,12 @@ flag::flag() {
   change = false;
   AEB = false;
   LED = false;
-  Sleep = false;
+  Sleep = true;
 }
 flag::~flag() {
 
 }
+
 flag *state;
 void setup() {
   // put your setup code here, to run once:
@@ -103,32 +105,41 @@ void setup() {
   Timer_Init();
   PWM_Init();
 
-  Watchdog_Init();
-
   state = new flag();
 
   Serial.begin(115200);
   Serial2.begin(9600);
-
+  Serial.println("Operating...");
+  delay(2000);
   Order.reserve(200);
 
-
-  Servo_power(189);
-  refVelocity = 0.5;
+  Servo_power(0);
+  refVelocity = 0;
   Forward();
+
+  int waitCount = 0;
+  while (waitCount < 100) {
+    if (digitalRead(Phase_A))
+      waitCount--;
+    else
+      waitCount++;
+#if (DEBUG == ENABLE)
+    Serial.println(waitCount);
+#endif
+  }
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  wdt_reset();
 
   Sensing();
 
   Actuating();
-  Serial.print("Current power: ");
-  Serial.print(velocity);
-  Serial.print("\tReference: ");
-  Serial.println(refVelocity);
+  //  Serial.print("Current power: ");
+  //  Serial.print(velocity);
+  //  Serial.print("\tReference: ");
+  //  Serial.println(refVelocity);
   delay(50);
 }
 
@@ -155,7 +166,7 @@ void Sensing() {
     state->AEB = true;
     Serial2.println("AEB signal ON");
 #if (DEBUG == ENABLE)
-    Serial.println("AEB signal ON");
+    //    Serial.println("AEB signal ON");
 #endif
   }
   else {
@@ -190,7 +201,12 @@ void Actuating() {
   else
     digitalWrite(Head_LED, LOW);
 
-  Servo_power(Steering);
+  if (Steering < -90)
+    Servo_power(-90);
+  else if (Steering > 90)
+    Servo_power(90);
+  else
+    Servo_power(Steering);
 }
 
 void AEB_system() {
@@ -246,20 +262,32 @@ ISR(INT0_vect) {
 }   // Phase A
 
 ISR(INT2_vect) {
-//  if (state->Sleep)
-//    ;
-//  else
-//    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  Motor_power(0);
+  delay(2000);
+  state->Sleep ^= 1;
 
-  state->Sleep != state->Sleep;
+  if (state->Sleep) {
+#if (DEBUG == ENABLE)
+    Serial.println("Sleep");
+#endif
+    delay(4000);
+    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  }
+  else {
+#if (DEBUG == ENABLE)
+    Serial.print("Wake Up");
+#endif
+  }
+
+
 }   // Sleep mode Wake up
 
 
 void Pin_Init() {
   /* Input */
-  pinMode(Phase_A, INPUT);     // Encoder Phase A
-  pinMode(Phase_B, INPUT);     // Encoder Phase B
-  pinMode(WakeUp,  INPUT);     // Wake up pin
+  pinMode(Phase_A, INPUT_PULLUP);     // Encoder Phase A
+  pinMode(Phase_B, INPUT_PULLUP);     // Encoder Phase B
+  pinMode(WakeUp,  INPUT_PULLUP);     // Wake up pin
 
   /* Output */
   pinMode(Motor, OUTPUT);             // Motor PWM
@@ -276,8 +304,8 @@ void Interrupt_Init() {
   EICRA |= (1 << ISC01);
   EICRA &= ~(1 << ISC00);       // INT0 Falling Edge
 
-  EICRA |= (1 << ISC21);
-  EICRA &= ~(1 << ISC20);       // INT2 Falling Edge
+  EICRA &= ~(1 << ISC21);
+  EICRA |= (1 << ISC20);       // INT2 Falling Edge
 
   EIFR |= (1 << INTF0);         // Clear INT0 Flag
   EIFR |= (1 << INTF2);         // Clear INT2 Flag
@@ -320,10 +348,12 @@ void PWM_Init() {
 
   TCNT3 = 0;
 
-  TCCR4B &= ~(1 << WGM43);
-  TCCR4B &= ~(1 << WGM42);
+  ICR4 = 4999;
+  
+  TCCR4B |= (1 << WGM43);
+  TCCR4B |= (1 << WGM42);
   TCCR4A |= (1 << WGM41);
-  TCCR4A &= ~(1 << WGM40);           // Fast PWM, 8-bit
+  TCCR4A &= ~(1 << WGM40);           // Fast PWM, TOP:ICR4
 
   TCCR4A |= (1 << COM4A1);
   TCCR4A &= ~(1 << COM4A0);         // OC4A Clear on compare match
@@ -333,9 +363,6 @@ void PWM_Init() {
   TCCR4B |= (1 << CS40);            // CLK/1
 
   TCNT4 = 0;
-}
-void Watchdog_Init() {
-  wdt_enable(WDTO_2S);
 }
 void Forward() {
   PORTE &= ~(1 << PORTE5);          // IN1 LOW
@@ -347,7 +374,10 @@ void Backward() {
   PORTG &= ~(1 << PORTG5);          // IN2 LOW
 }
 
-void Servo_power(int value) {
+void Servo_power(int angle) {
+  uint16_t value;
+
+  value = (float)(angle + 90) / 180 * Servo_MAXus + Servo_MINus;
   OCR4A = value;
 }
 
