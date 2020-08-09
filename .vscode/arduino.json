@@ -1,0 +1,6 @@
+{
+    "sketch": "AutoDriving\\AutoDriving.ino",
+    "board": "arduino:avr:uno",
+    "port": "COM6",
+    "output": "../build"
+}

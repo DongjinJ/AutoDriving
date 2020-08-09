@@ -35,6 +35,7 @@ const byte Right_LED = 51;
 const byte Head_LED = 49;
 const byte Rear_LED = 47;
 const byte WakeUp = 19;
+const byte Ignition = 7;
 
 /* Initialize Function */
 void Pin_Init();
@@ -118,15 +119,20 @@ void setup() {
   Forward();
 
   int waitCount = 0;
-  while (waitCount < 100) {
-    if (digitalRead(Phase_A))
-      waitCount--;
-    else
+  Serial2.println("Ready");
+  while (waitCount < 1000) {
+    if (digitalRead(Ignition))
       waitCount++;
+    else
+      ;
+    delay(1);
 #if (DEBUG == ENABLE)
     Serial.println(waitCount);
 #endif
   }
+#if (DEBUG == ENABLE)
+  Serial.println("Key On");
+#endif
   LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 }
 
@@ -136,10 +142,14 @@ void loop() {
   Sensing();
 
   Actuating();
-  //  Serial.print("Current power: ");
-  //  Serial.print(velocity);
-  //  Serial.print("\tReference: ");
-  //  Serial.println(refVelocity);
+
+#if (DEBUG == ENABLE)
+  Serial.print("Current power: ");
+  Serial.print(velocity);
+  Serial.print("\tReference: ");
+  Serial.println(refVelocity);
+#endif
+
   delay(50);
 }
 
@@ -165,9 +175,11 @@ void Sensing() {
   if (frontDistance > 300) {
     state->AEB = true;
     Serial2.println("AEB signal ON");
+
 #if (DEBUG == ENABLE)
-    //    Serial.println("AEB signal ON");
+    Serial.println("AEB signal ON");
 #endif
+
   }
   else {
     state->AEB = false;
@@ -263,23 +275,22 @@ ISR(INT0_vect) {
 
 ISR(INT2_vect) {
   Motor_power(0);
-  delay(2000);
   state->Sleep ^= 1;
 
   if (state->Sleep) {
+    Serial2.println("Sleep");
 #if (DEBUG == ENABLE)
     Serial.println("Sleep");
 #endif
-    delay(4000);
+    delay(5000);
     LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
   }
   else {
+    Serial2.println("Wake Up");
 #if (DEBUG == ENABLE)
-    Serial.print("Wake Up");
+    Serial.println("Wake Up");
 #endif
   }
-
-
 }   // Sleep mode Wake up
 
 
@@ -288,6 +299,7 @@ void Pin_Init() {
   pinMode(Phase_A, INPUT_PULLUP);     // Encoder Phase A
   pinMode(Phase_B, INPUT_PULLUP);     // Encoder Phase B
   pinMode(WakeUp,  INPUT_PULLUP);     // Wake up pin
+  pinMode(Ignition, INPUT_PULLUP);    // Wake up pin
 
   /* Output */
   pinMode(Motor, OUTPUT);             // Motor PWM
@@ -349,7 +361,7 @@ void PWM_Init() {
   TCNT3 = 0;
 
   ICR4 = 4999;
-  
+
   TCCR4B |= (1 << WGM43);
   TCCR4B |= (1 << WGM42);
   TCCR4A |= (1 << WGM41);
@@ -385,12 +397,24 @@ void Motor_power(int value) {
   // OCR3A = value;
   OCR3B = value;
 }
-
+#if (DEBUG == ENABLE)
+void serialEvent1() {
+  String DebugData = "";
+  while (Serial.available()) {
+    char inChar = (char)Serial.read();
+    DebugData += inChar;
+    delay(10);
+  }
+  Serial.println(DebugData);
+  Serial2.println(DebugData);
+}
+#endif
 void serialEvent2() {
   while (Serial2.available()) {
     char inChar = (char)Serial2.read();
     Order += inChar;
     delay(10);
   }
+
   state->change = true;
 }
