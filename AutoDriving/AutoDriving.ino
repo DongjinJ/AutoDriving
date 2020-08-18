@@ -12,16 +12,14 @@
 #define EncoderGear 81
 #define TwoPiR 0.19823
 #define Resolution 360
-#define SamplingTime 0.1
 
-#define Center 190
 #define Servo_MAXus     (1880U) * 2
 #define Servo_MINus     (520U) * 2
 
 #define cdSensor A0
 #define irSensor A1
 
-#define SamplingTime 0.09
+#define SamplingTime 0.09                   // Sec 단위 (속도 계산 주기)
 
 /* Pin Number */
 const byte Phase_A = 21;
@@ -237,7 +235,7 @@ void AEB_system() {
 
 ISR(TIMER1_COMPA_vect) {
   distance = (float)EncoderGear / (float)Resolution * pulseCount / (float) WheelGear * TwoPiR;
-  velocity = distance / 0.1;
+  velocity = distance / SamplingTime;
   pulseCount = 0;
 
   if (!state->AEB) {
@@ -260,7 +258,7 @@ ISR(TIMER1_COMPA_vect) {
   }
   else
     AEB_system();
-}   // 0.01초마다 동작
+}   // SamplingTime초마다 동작
 
 
 
@@ -338,7 +336,7 @@ void Timer_Init() {
   TCCR1B |= (1 << CS11);
   TCCR1B |= (1 << CS10);            // CLK/64
 
-  OCR1A = (16000000 / 64) * SamplingTime - 1;                // 10Hz = 0.1 sec
+  OCR1A = (16000000 / 64) * SamplingTime - 1;                // Sampling Time을 Tick으로 계산 (Sec 단위)
   TCNT1 = 0x0000;
 
   TIMSK1 |= (1 << OCIE1A);          // interrupt Enable
