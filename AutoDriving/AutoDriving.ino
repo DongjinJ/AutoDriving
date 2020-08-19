@@ -22,18 +22,19 @@
 #define SamplingTime 0.09                   // Sec 단위 (속도 계산 주기)
 
 /* Pin Number */
-const byte Phase_A = 21;
-const byte Phase_B = 20;
-const byte Motor = 2;
-const byte servo = 6;
-const byte IN1 = 3;
-const byte IN2 = 4;
-const byte Left_LED = 53;
-const byte Right_LED = 51;
-const byte Head_LED = 49;
-const byte Rear_LED = 47;
-const byte WakeUp = 19;
-const byte Ignition = 7;
+#define Motor       2
+#define IN1         3
+#define IN2         4
+#define servo       6
+#define Ignition    7
+#define WakeUp      19
+#define Phase_B     20
+#define Phase_A     21
+#define Rear_LED    47
+#define Head_LED    49
+#define Right_LED   51
+#define Left_LED    53
+
 
 /* Initialize Function */
 void Pin_Init();
