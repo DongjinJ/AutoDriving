@@ -6,7 +6,13 @@
 #define ENABLE  1
 #define DISABLE 0
 
-#define DEBUG   ENABLE
+#define L298N               0
+#define MD10C               1
+
+#define DEBUG               ENABLE
+
+#define MOTOR_DRIVER_SPEC   MD10C
+
 /*  define  */
 #define WheelGear 30
 #define EncoderGear 81
@@ -21,10 +27,23 @@
 
 #define SamplingTime 0.09                   // Sec 단위 (속도 계산 주기)
 
+/*    Command    */
+#define Command_Servo          0
+#define Command_Velocity       1
+#define Command_Transmission   2
+#define Command_Battery        3
+#define Command_CarState       4
+
 /* Pin Number */
 #define Motor       2
+#if (MOTOR_DRIVER_SPEC == L298N)
 #define IN1         3
 #define IN2         4
+#elif (MOTOR_DRIVER_SPEC == MD10C)
+#define Dir         3
+#else
+#error "Check Motor Driver Spec!!!"
+#endif
 #define servo       6
 #define Ignition    7
 #define WakeUp      19
@@ -49,13 +68,18 @@ void Backward();
 void Servo_power(int angle);
 void Motor_power(int value);
 void AEB_system();
+void PI_Controller();
 
 /* ETC Function */
 void Sensing();
 void Actuating();
+void Decode_command();
 
 /* Interrupt variable */
-String Order = "";
+volatile String Order = "";
+volatile int Command_ID;
+volatile int Command_DATA;
+volatile char Command_TYPE;
 
 volatile int pulseCount = 0;
 volatile float distance = 0;
@@ -77,12 +101,20 @@ float refVelocity = 0;
 int Steering = 0;
 int power = 128;
 
+enum Transmission {
+  P = 0,
+  R,
+  N,
+  D
+};
+
 class flag {
   public:
     volatile bool change;
     volatile bool AEB;
     volatile bool LED;
     volatile bool Sleep;
+    volatile int curT;
 
     flag();
     ~flag();
@@ -92,12 +124,15 @@ flag::flag() {
   AEB = false;
   LED = false;
   Sleep = true;
+  curT = P;
 }
+
 flag::~flag() {
 
 }
 
 flag *state;
+
 void setup() {
   // put your setup code here, to run once:
   Pin_Init();
@@ -119,20 +154,20 @@ void setup() {
 
   int waitCount = 0;
   Serial2.println("Ready");
-  while (waitCount < 1000) {
-    if (digitalRead(Ignition))
-      waitCount++;
-    else
-      ;
-    delay(1);
-#if (DEBUG == ENABLE)
-    Serial.println(waitCount);
-#endif
-  }
+  //  while (waitCount < 1000) {
+  //    if (digitalRead(Ignition))
+  //      waitCount++;
+  //    else
+  //      ;
+  //    delay(1);
+  //#if (DEBUG == ENABLE)
+  //    Serial.println(waitCount);
+  //#endif
+  //  }
 #if (DEBUG == ENABLE)
   Serial.println("Key On");
 #endif
-  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  //  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 }
 
 void loop() {
@@ -142,43 +177,24 @@ void loop() {
 
   Actuating();
 
-#if (DEBUG == ENABLE)
-  Serial.print("Current power: ");
-  Serial.print(velocity);
-  Serial.print("\tReference: ");
-  Serial.println(refVelocity);
-#endif
-
   delay(50);
 }
 
 void Sensing() {
-  // Serial.print("motor: ");
-  // Serial.println(PI_Control);
 
   brightness = analogRead(cdSensor);
   frontDistance = analogRead(irSensor);
 
   if (brightness > 600) {
     state->LED = true;
-    Serial2.println("LED signal ON");
   }
   else {
     state->LED = false;
 
   }
 
-
-  // Serial.print("IR data: ");
-  // Serial.println(frontDistance);
   if (frontDistance > 300) {
     state->AEB = true;
-    Serial2.println("AEB signal ON");
-
-#if (DEBUG == ENABLE)
-    Serial.println("AEB signal ON");
-#endif
-
   }
   else {
     state->AEB = false;
@@ -189,21 +205,15 @@ void Sensing() {
 void Actuating() {
   if (state->change) {
     state->change = false;
-    int indexV = Order.indexOf("V");
-    int indexS = Order.indexOf("S");
-    String strV = Order.substring(indexV + 1, indexS);
-    String strS = Order.substring(indexS + 1, Order.length());
 
-    refVelocity = strV.toFloat();
-    Steering = strS.toInt();
-#if   (DEBUG == ENABLE)
-    Serial.println("V:  " + strV + "\tS: " + strS);
-    Serial.print("Current velocity: ");
-    Serial.print(velocity);
-    Serial.print("\tGoal: ");
-    Serial.print(refVelocity);
-    Serial.println("m/s");
+#if (DEBUG == ENABLE)
+    Serial.print("Command ID: ");
+    Serial.println(Command_ID);
+    Serial.print("Command DATA: ");
+    Serial.println(Command_DATA);
 #endif
+
+    Decode_command();
     Order = "";
   }
 
@@ -234,27 +244,61 @@ void AEB_system() {
   }
 }
 
+void PI_Controller() {
+  error = refVelocity - velocity;
+  P_Control = Kp * error;
+  I_Control += Ki * error * SamplingTime;
+  PI_Control = P_Control + I_Control;
+  if (velocity > 0)
+    ;
+  else
+    I_Control += 50;
+  if (PI_Control > 255)
+    PI_Control = 255;
+  else if (PI_Control < -255)
+    PI_Control = -255;
+}
 ISR(TIMER1_COMPA_vect) {
   distance = (float)EncoderGear / (float)Resolution * pulseCount / (float) WheelGear * TwoPiR;
   velocity = distance / SamplingTime;
   pulseCount = 0;
 
   if (!state->AEB) {
-    error = refVelocity - velocity;
-    P_Control = Kp * error;
-    I_Control += Ki * error * SamplingTime;
-    PI_Control = P_Control + I_Control;
-    if (velocity > 0)
-      ;
-    else
-      I_Control += 50;
-    if (PI_Control > 255)
-      PI_Control = 255;
-    else if (PI_Control < 0)
-      PI_Control = 0;
+    switch (state->curT) {
+      case P:
+        break;
+        
+      case R:
+        PI_Controller();
+        if (PI_Control >= 0) {
+          Forward();
+          Motor_power(PI_Control);
+        }
+        else {
+          Backward();
+          Motor_power(PI_Control);
+        }
+        break;
+
+      case N:
+        break;
+
+      case D:
+        PI_Controller();
+        if (PI_Control >= 0) {
+          Forward();
+          Motor_power(PI_Control);
+        }
+        else {
+          Motor_power(0);
+        }
+        break;
+
+      default:
+        break;
+    }
 
 
-    Motor_power(PI_Control);
     digitalWrite(Rear_LED, LOW);
   }
   else
@@ -303,8 +347,14 @@ void Pin_Init() {
   /* Output */
   pinMode(Motor, OUTPUT);             // Motor PWM
   pinMode(servo, OUTPUT);             // Servo PWM
+#if (MOTOR_DRIVER_SPEC == L298N)
   pinMode(IN1, OUTPUT);               // IN 1
   pinMode(IN2, OUTPUT);               // IN 2
+#elif (MOTOR_DRIVER_SPEC == MD10C)
+  pinMode(Dir, OUTPUT);               // Dir
+#else
+#error "Check Motor Driver Spec!!!"
+#endif
   pinMode(Left_LED, OUTPUT);          // 왼쪽 방향 지시등
   pinMode(Right_LED, OUTPUT);         // 오른쪽 방향 지시등
   pinMode(Head_LED, OUTPUT);          // 헤드 램프
@@ -376,13 +426,31 @@ void PWM_Init() {
   TCNT4 = 0;
 }
 void Forward() {
-  PORTE &= ~(1 << PORTE5);          // IN1 LOW
-  PORTG |= (1 << PORTG5);           // IN2 HIGH
+#if (MOTOR_DRIVER_SPEC == L298N)
+  digitalWrite(IN1, LOW);
+  //  PORTE &= ~(1 << PORTE5);          // IN1 LOW
+  digitalWrite(IN2, HIGH);
+  //  PORTG |= (1 << PORTG5);           // IN2 HIGH
+#elif (MOTOR_DRIVER_SPEC == MD10C)
+  digitalWrite(Dir, HIGH);               // Dir
+#else
+#error "Check Motor Driver Spec!!!"
+#endif
 }
 
 void Backward() {
-  PORTE |= (1 << PORTE5);           // IN1 HIGH
-  PORTG &= ~(1 << PORTG5);          // IN2 LOW
+#if (MOTOR_DRIVER_SPEC == L298N)
+  digitalWrite(IN1, HIGH);
+  //  PORTE |= (1 << PORTE5);           // IN1 HIGH
+  digitalWrite(IN2, LOW);
+  //  PORTG &= ~(1 << PORTG5);          // IN2 LOW
+#elif (MOTOR_DRIVER_SPEC == MD10C)
+  digitalWrite(Dir, LOW);               // Dir
+#else
+#error "Check Motor Driver Spec!!!"
+#endif
+
+
 }
 
 void Servo_power(int angle) {
@@ -396,16 +464,97 @@ void Motor_power(int value) {
   // OCR3A = value;
   OCR3B = value;
 }
+
+void Decode_command() {
+  String Return_Data = "$";
+  int state_data = 0;
+
+  switch (Command_ID) {
+    case Command_Servo:
+      if (Command_TYPE == 'r') {
+        Return_Data += "0/" + String(Steering) + "%";
+        Serial.println(Return_Data);
+      }
+      else if (Command_TYPE == 'w') {
+        Steering = Command_DATA;
+      }
+      break;
+    case Command_Velocity:
+      if (Command_TYPE == 'r') {
+        Return_Data += "0/" + String(velocity) + "%";
+        Serial.println(Return_Data);
+      }
+      else if (Command_TYPE == 'w') {
+        refVelocity = Command_DATA;
+      }
+      break;
+    case Command_Transmission:
+      if (Command_TYPE == 'r') {
+        Return_Data += "0/" + String(state->curT) + "%";
+        Serial.println(Return_Data);
+      }
+      else if (Command_TYPE == 'w') {
+        state->curT = Command_DATA;
+      }
+      break;
+    case Command_Battery:
+      if (Command_TYPE == 'r') {
+        Return_Data += "0/" + String(state->curT) + "%";
+        Serial.println(Return_Data);
+      }
+      else if (Command_TYPE == 'w') {
+        ;
+      }
+      break;
+    case Command_CarState:
+      if (Command_TYPE == 'r') {
+        state_data = (state->AEB << 2) | (state->LED << 1) | (state->Sleep);
+        Return_Data += "0/" + String(state_data) + "%";
+        Serial.println(Return_Data);
+      }
+      else if (Command_TYPE == 'w') {
+        ;
+      }
+      break;
+      
+    default: 
+      break;
+  }
+}
 #if (DEBUG == ENABLE)
-void serialEvent1() {
+void serialEvent() {
   String DebugData = "";
   while (Serial.available()) {
     char inChar = (char)Serial.read();
     DebugData += inChar;
     delay(10);
   }
-  Serial.println(DebugData);
-  Serial2.println(DebugData);
+
+  int indexP, indexS;
+  String temp;
+  if (DebugData[0] == '$') {
+    Command_TYPE = DebugData[1];
+    indexP = DebugData.indexOf('%');
+    if (indexP == -1)
+      ;
+    else {
+      Order = DebugData.substring(2, indexP);
+      indexS = Order.indexOf('/');
+      temp = Order.substring(0, indexS);
+      Command_ID = temp.toInt();
+      if (Command_ID == Command_Velocity) {
+        temp = Order.substring(indexS + 1);
+        Command_DATA = temp.toFloat();
+      }
+      else {
+        temp = Order.substring(indexS + 1);
+        Command_DATA = temp.toInt();
+      }
+      state->change = true;
+    }
+  }
+  else
+    ;
 }
 #endif
 void serialEvent2() {
