@@ -9,9 +9,13 @@
 #define L298N               0
 #define MD10C               1
 
+#define ENCODER_TYPE_A      0
+#define ENCODER_TYPE_B      1
+
 #define DEBUG               ENABLE
 
 #define MOTOR_DRIVER_SPEC   MD10C
+#define ENCODER_TYPE        ENCODER_TYPE_A
 
 /*  define  */
 #define WheelGear 30
@@ -183,7 +187,7 @@ void loop() {
 void Sensing() {
 
   brightness = analogRead(cdSensor);
-  frontDistance = analogRead(irSensor);
+//  frontDistance = analogRead(irSensor);
 
   if (brightness > 600) {
     state->LED = true;
