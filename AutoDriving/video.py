@@ -10,6 +10,9 @@ video = pafy.new(url)
 best = video.getbest(preftype = 'mp4')
 
 cap = cv2.VideoCapture(best.url)
+#cap = cv2.VideoCapture(-1)   // Pi Cam 연결
+#prevTime = 0                 // 이전 시간 저장 변수
+
 ym_per_pix = 30/720
 xm_per_pix = 3.7/720
 
@@ -179,6 +182,7 @@ def draw_lane_lines(original_image, warped_image, Minv, draw_info):
 
 while True:
    retval, img = cap.read()
+   
 
    if not retval:
       break
@@ -197,8 +201,17 @@ while True:
    draw_info = slide_window_search(thresh,leftbase,rightbase)
 
    meanPts,result = draw_lane_lines(img,thresh,minverse,draw_info)
+
+   # curTime = time.time()                                                          // 현재 시간 저장
+   # sec = curTime - prevTime                                                       // 영상처리 걸린 시간 측정
+   # prevTime = curTime                                                             // 다음 계산을 위한 이전 시간 update
+   # fps = 1/(sec)                                                                  // fps 계산
+   # str = "FPS: %0.1f" % fps                                                       // 문자열 형태로 저장
+   # cv2.putText(result, str, (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255))    // 영상에 표시
+
    cv2.imshow("result",result)
 #   out1.write(result)
+
 
    key = cv2.waitKey(25)
    if key == 27:
