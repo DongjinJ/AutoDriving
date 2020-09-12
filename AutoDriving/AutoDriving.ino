@@ -1,6 +1,6 @@
 /* Servo Left/center/Right: 150/190/230 +-40 */
 /*  include */
-#include <LowPower.h>
+#include <avr/wdt.h>
 
 /* Configuration */
 #define ENABLE  1
@@ -14,7 +14,7 @@
 
 #define DEBUG               ENABLE
 
-#define MOTOR_DRIVER_SPEC   MD10C
+#define MOTOR_DRIVER_SPEC   L298N
 #define ENCODER_TYPE        ENCODER_TYPE_A
 
 /*  define  */
@@ -26,10 +26,11 @@
 #define Servo_MAXus     (1880U) * 2
 #define Servo_MINus     (520U) * 2
 
-#define cdSensor A0
-#define irSensor A1
+#define SamplingTime_A    0.09                    // Sec 단위 (속도 계산 주기)
+#define SamplingTime_B    1.0                     // Sec 단위 (속도 계산 주기)
 
-#define SamplingTime 0.09                   // Sec 단위 (속도 계산 주기)
+#define R1          9.83                          // Battery 분배 저항 1
+#define R2          4.61                          // Battery 분배 저항 2
 
 /*    Command    */
 #define Command_Servo          0
@@ -39,6 +40,10 @@
 #define Command_CarState       4
 
 /* Pin Number */
+#define cdSensor A0
+#define irSensor A1
+#define Ignition A2
+
 #define Motor       2
 #if (MOTOR_DRIVER_SPEC == L298N)
 #define IN1         3
@@ -49,8 +54,8 @@
 #error "Check Motor Driver Spec!!!"
 #endif
 #define servo       6
-#define Ignition    7
-#define WakeUp      19
+#define syncRaspPi  18
+#define syncArduino 19
 #define Phase_B     20
 #define Phase_A     21
 #define Rear_LED    47
@@ -89,6 +94,11 @@ volatile int pulseCount = 0;
 volatile float distance = 0;
 volatile float velocity = 0;
 
+/* Ignition and Battery variable */
+volatile int ignitionCount = 0;
+volatile int voltageData = 0;
+volatile float voltage = 0;
+
 /* Sensing Variable */
 int brightness = 0;
 int frontDistance = 0;
@@ -117,7 +127,7 @@ class flag {
     volatile bool change;
     volatile bool AEB;
     volatile bool LED;
-    volatile bool Sleep;
+    volatile bool IG;
     volatile int curT;
 
     flag();
@@ -127,7 +137,7 @@ flag::flag() {
   change = false;
   AEB = false;
   LED = false;
-  Sleep = true;
+  IG = false;
   curT = P;
 }
 
@@ -140,43 +150,35 @@ flag *state;
 void setup() {
   // put your setup code here, to run once:
   Pin_Init();
-  Interrupt_Init();
   Timer_Init();
+  Interrupt_Init();
   PWM_Init();
+
 
   state = new flag();
 
   Serial.begin(115200);
-  Serial2.begin(9600);
+
   Serial.println("Operating...");
-  delay(2000);
+  delay(1000);
   Order.reserve(200);
 
   Servo_power(0);
   refVelocity = 0;
   Forward();
 
-  int waitCount = 0;
-  Serial2.println("Ready");
-  //  while (waitCount < 1000) {
-  //    if (digitalRead(Ignition))
-  //      waitCount++;
-  //    else
-  //      ;
-  //    delay(1);
-  //#if (DEBUG == ENABLE)
-  //    Serial.println(waitCount);
-  //#endif
-  //  }
-#if (DEBUG == ENABLE)
-  Serial.println("Key On");
-#endif
-  //  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  while (!state->IG) {
+    ;
+  }
+  Serial.println("Ignition On...");
+
+  digitalWrite(syncRaspPi, HIGH);
+  wdt_enable(WDTO_4S);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  wdt_reset();
   Sensing();
 
   Actuating();
@@ -187,7 +189,7 @@ void loop() {
 void Sensing() {
 
   brightness = analogRead(cdSensor);
-//  frontDistance = analogRead(irSensor);
+  //  frontDistance = analogRead(irSensor);
 
   if (brightness > 600) {
     state->LED = true;
@@ -226,6 +228,11 @@ void Actuating() {
   else
     digitalWrite(Head_LED, LOW);
 
+  while (!state->IG) {
+    Serial.println("Low Battery Voltage or Ignition Off");
+    delay(1000);
+  }
+
   if (Steering < -90)
     Servo_power(-90);
   else if (Steering > 90)
@@ -251,7 +258,7 @@ void AEB_system() {
 void PI_Controller() {
   error = refVelocity - velocity;
   P_Control = Kp * error;
-  I_Control += Ki * error * SamplingTime;
+  I_Control += Ki * error * SamplingTime_A;
   PI_Control = P_Control + I_Control;
   if (velocity > 0)
     ;
@@ -262,16 +269,17 @@ void PI_Controller() {
   else if (PI_Control < -255)
     PI_Control = -255;
 }
+
 ISR(TIMER1_COMPA_vect) {
   distance = (float)EncoderGear / (float)Resolution * pulseCount / (float) WheelGear * TwoPiR;
-  velocity = distance / SamplingTime;
+  velocity = distance / SamplingTime_A;
   pulseCount = 0;
 
   if (!state->AEB) {
     switch (state->curT) {
       case P:
         break;
-        
+
       case R:
         PI_Controller();
         if (PI_Control >= 0) {
@@ -307,9 +315,28 @@ ISR(TIMER1_COMPA_vect) {
   }
   else
     AEB_system();
-}   // SamplingTime초마다 동작
+}   // SamplingTime_A 초마다 동작
 
+ISR(TIMER5_COMPA_vect) {
+  voltageData = analogRead(Ignition);
+  voltage = (float)voltageData * (5.0 / 1024.0);             // ADC -> Voltage
+  voltage = voltage * ((R1 + R2) / R2);             // calcurate origin voltage
 
+  if (voltage >= 7.6 && ignitionCount <= 10)
+    ignitionCount++;
+  else if (voltage < 7.6 && ignitionCount > 0) {
+    ignitionCount--;
+  }
+  else
+    ;
+
+  if (ignitionCount >= 10)
+    state->IG = true;
+  else if (ignitionCount <= 0)
+    state->IG = false;
+  else
+    ;
+}   // SamplingTime_B 초마다 동작
 
 
 ISR(INT0_vect) {
@@ -320,33 +347,11 @@ ISR(INT0_vect) {
 
 }   // Phase A
 
-ISR(INT2_vect) {
-  Motor_power(0);
-  state->Sleep ^= 1;
-
-  if (state->Sleep) {
-    Serial2.println("Sleep");
-#if (DEBUG == ENABLE)
-    Serial.println("Sleep");
-#endif
-    delay(5000);
-    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
-  }
-  else {
-    Serial2.println("Wake Up");
-#if (DEBUG == ENABLE)
-    Serial.println("Wake Up");
-#endif
-  }
-}   // Sleep mode Wake up
-
-
 void Pin_Init() {
   /* Input */
   pinMode(Phase_A, INPUT_PULLUP);     // Encoder Phase A
   pinMode(Phase_B, INPUT_PULLUP);     // Encoder Phase B
-  pinMode(WakeUp,  INPUT_PULLUP);     // Wake up pin
-  pinMode(Ignition, INPUT_PULLUP);    // Wake up pin
+  pinMode(syncArduino, INPUT_PULLUP); // Arduino Sync pin
 
   /* Output */
   pinMode(Motor, OUTPUT);             // Motor PWM
@@ -359,24 +364,21 @@ void Pin_Init() {
 #else
 #error "Check Motor Driver Spec!!!"
 #endif
+  pinMode(syncRaspPi, OUTPUT);        // Raspberry Pi Sync pin
   pinMode(Left_LED, OUTPUT);          // 왼쪽 방향 지시등
   pinMode(Right_LED, OUTPUT);         // 오른쪽 방향 지시등
   pinMode(Head_LED, OUTPUT);          // 헤드 램프
-  pinMode(Rear_LED, OUTPUT);          // 브레이크 등
+  pinMode(Rear_LED, OUTPUT);          // 브레이크등
+
 }
 
 void Interrupt_Init() {
   EICRA |= (1 << ISC01);
   EICRA &= ~(1 << ISC00);       // INT0 Falling Edge
 
-  EICRA &= ~(1 << ISC21);
-  EICRA |= (1 << ISC20);       // INT2 Falling Edge
-
   EIFR |= (1 << INTF0);         // Clear INT0 Flag
-  EIFR |= (1 << INTF2);         // Clear INT2 Flag
 
   EIMSK |= (1 << INT0);         // Enable INT0
-  EIMSK |= (1 << INT2);         // Enable INT2
 
   sei();
 }
@@ -387,15 +389,33 @@ void Timer_Init() {
   TCCR1A &= ~(1 << WGM11);
   TCCR1A &= ~(1 << WGM10);          // CTC Mode
 
-  TCCR1B &= ~(1 << CS12);
-  TCCR1B |= (1 << CS11);
-  TCCR1B |= (1 << CS10);            // CLK/64
+  TCCR1B |= (1 << CS12);
+  TCCR1B &= ~(1 << CS11);
+  TCCR1B &= ~(1 << CS10);            // CLK/256
 
-  OCR1A = (16000000 / 64) * SamplingTime - 1;                // Sampling Time을 Tick으로 계산 (Sec 단위)
+  OCR1A = (16000000 / 256) * SamplingTime_A - 1;                // Sampling Time을 Tick으로 계산 (Sec 단위)
+
   TCNT1 = 0x0000;
 
   TIMSK1 |= (1 << OCIE1A);          // interrupt Enable
   TIFR1 |= (1 << OCF1A);            // Clear Flag
+
+
+  TCCR5B &= ~(1 << WGM53);
+  TCCR5B |= (1 << WGM52);
+  TCCR5A &= ~(1 << WGM51);
+  TCCR5A &= ~(1 << WGM50);          // CTC Mode
+
+  TCCR5B |= (1 << CS52);
+  TCCR5B &= ~(1 << CS51);
+  TCCR5B &= ~(1 << CS50);            // CLK/256
+
+  OCR5A = (16000000 / 256) * SamplingTime_B - 1;                // Sampling Time을 Tick으로 계산 (Sec 단위)
+
+  TCNT1 = 0x0000;
+
+  TIMSK5 |= (1 << OCIE5A);          // interrupt Enable
+  TIFR5 |= (1 << OCF5A);            // Clear Flag
 }
 
 void PWM_Init() {
@@ -512,7 +532,7 @@ void Decode_command() {
       break;
     case Command_CarState:
       if (Command_TYPE == 'r') {
-        state_data = (state->AEB << 2) | (state->LED << 1) | (state->Sleep);
+        state_data = (state->AEB << 2) | (state->LED << 1) | (state->IG);
         Return_Data += "0/" + String(state_data) + "%";
         Serial.println(Return_Data);
       }
@@ -520,8 +540,8 @@ void Decode_command() {
         ;
       }
       break;
-      
-    default: 
+
+    default:
       break;
   }
 }
@@ -561,12 +581,3 @@ void serialEvent() {
     ;
 }
 #endif
-void serialEvent2() {
-  while (Serial2.available()) {
-    char inChar = (char)Serial2.read();
-    Order += inChar;
-    delay(10);
-  }
-
-  state->change = true;
-}
