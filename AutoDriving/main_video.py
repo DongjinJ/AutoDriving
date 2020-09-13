@@ -260,7 +260,7 @@ def detect_lanes_img(img):
 
     # Set ROI
     vertices = np.array(
-        [[(0, height), (width / 2 - 100, height / 2), (width / 2 + 100, height / 2), (width, height)]],
+        [[(50, height), (width / 2 - 45, height / 2 + 60), (width / 2 + 45, height / 2 + 60), (width - 50, height)]],
         dtype=np.int32)
     ROI_img = region_of_interest(img, vertices)
 
@@ -274,7 +274,7 @@ def detect_lanes_img(img):
     canny_img = canny(blur_img, 70, 210)
     # to except contours of ROI image
     vertices2 = np.array(
-        [[(0, height), (width / 2 - 100, height / 2), (width / 2 + 100, height / 2), (width, height)]],
+        [[(52, height), (width / 2 - 43, height / 2 + 62), (width / 2 + 43, height / 2 + 62), (width - 52, height)]],
         dtype=np.int32)
     canny_img = region_of_interest(canny_img, vertices2)
 
