@@ -268,7 +268,7 @@ def detect_lanes_img(img):
     # g_img = grayscale(img)
 
     # Apply gaussian filter
-    blur_img = gaussian_blur(ROI_img, 3)
+    blur_img = gaussian_blur(ROI_img, 7)
 
     # Apply Canny edge transform
     canny_img = canny(blur_img, 70, 210)
