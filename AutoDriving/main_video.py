@@ -268,7 +268,7 @@ def detect_lanes_img(img):
     # g_img = grayscale(img)
 
     # Apply gaussian filter
-    blur_img = gaussian_blur(ROI_img, 3)
+    blur_img = gaussian_blur(ROI_img, 7)
 
     # Apply Canny edge transform
     canny_img = canny(blur_img, 70, 210)
@@ -339,9 +339,14 @@ if __name__ == '__main__':
         f_y = result.shape[0]
 #        print(f_x,f_y)
 #        print(left_line, right_line)
-        midpoint = int((left_line[2]+right_line[2])/2)
+#        midpoint = int((left_line[2]+right_line[2])/2)
 #        print(midpoint)
-        result =  cv2.circle(result, (midpoint,int(f_y/2)), 5,(0,255,0),-1)
+
+        midx = int(right_line[2] + left_line[2] - (right_line[0] + left_line[0]) / 2)
+        midy = int(right_line[3] * 2 - right_line[1])
+        result = cv2.circle(result,(midx,midy),5,(0,255,0),-1)
+        
+#        result =  cv2.circle(result, (midpoint,int(f_y/2)), 5,(0,255,0),-1)
         curTime = time.time()
         sec = curTime - prevTime
         prevTime = curTime
