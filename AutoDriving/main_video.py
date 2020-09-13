@@ -12,9 +12,9 @@ import os, sys
 prevTime = 0
 
 # cap = cv2.VideoCapture('solidWhiteRight.mp4')
-# cap = cv2.VideoCapture('solidYellowLeft.mp4')
-#cap = cv2.VideoCapture('project_video.mp4')
-cap = cv2.VideoCapture(-1)
+#cap = cv2.VideoCapture('challenge.mp4')
+#cap = cv2.VideoCapture('test.h264')
+cap = cv2.VideoCapture(0)
 fit_result, l_fit_result, r_fit_result, L_lane, R_lane = [], [], [], [], []
 
 
@@ -260,7 +260,7 @@ def detect_lanes_img(img):
 
     # Set ROI
     vertices = np.array(
-        [[(0, height), (width / 2 - 100, height / 2), (width / 2 + 100, height / 2), (width, height)]],
+        [[(0, height), (width / 2 - 80, height / 2), (width / 2 + 80, height / 2), (width, height)]],
         dtype=np.int32)
     ROI_img = region_of_interest(img, vertices)
 
@@ -274,7 +274,7 @@ def detect_lanes_img(img):
     canny_img = canny(blur_img, 70, 210)
     # to except contours of ROI image
     vertices2 = np.array(
-        [[(0, height), (width / 2 - 100, height / 2), (width / 2 + 100, height / 2), (width, height)]],
+        [[(20, height), (width / 2 - 80, height / 2), (width / 2 + 80, height / 2), (width - 20, height)]],
         dtype=np.int32)
     canny_img = region_of_interest(canny_img, vertices2)
 
@@ -332,7 +332,7 @@ if __name__ == '__main__':
         ret, frame = cap.read()
 #        if frame.shape[0] != 540:  # resizing for challenge video
 #            frame = cv2.resize(frame, None, fx=3/4, fy=3/4, interpolation=cv2.INTER_AREA)
-        frame = cv2.resize(frame, dsize=(320,240), interpolation=cv2.INTER_AREA)
+        frame = cv2.resize(frame, dsize=(540,360), interpolation=cv2.INTER_AREA)
 
         result, left_line, right_line = detect_lanes_img(frame)
         f_x = result.shape[1]
@@ -346,7 +346,7 @@ if __name__ == '__main__':
         midy = int(right_line[3] * 2 - right_line[1])
         result = cv2.circle(result,(midx,midy),5,(0,255,0),-1)
         
-#        result =  cv2.circle(result, (midpoint,int(f_y/2)), 5,(0,255,0),-1)
+#        result =  cv2.circle(result, (midpoint,int(f_y/2)), 5,(0,255,0),-1
         curTime = time.time()
         sec = curTime - prevTime
         prevTime = curTime
@@ -363,3 +363,4 @@ if __name__ == '__main__':
 
     cap.release()
     cv2.destroyAllWindows()
+    
