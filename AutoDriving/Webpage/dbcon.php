@@ -1,7 +1,7 @@
 <?php	
 
     $host = 'localhost';	
-    $username = 'root';	
+    $username = 'dbstone';	
     $password = '3083';	
     $dbname = 'double_stone';	
 

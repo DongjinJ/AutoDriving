@@ -1,11 +1,12 @@
 import MySQLdb
 
-db=MySQLdb.connect("localhost","root","3083","double_stone")
+db=MySQLdb.connect("localhost","dbstone","3083","double_stone")
 curs=db.cursor()
 
 try:
-	strQuery="INSERT INTO state VALUES(NOW(),240,20,25,5,10)"
-	curs.execute(strQuery,)
+    strQuery = "INSERT INTO state VALUES(NOW(),{},{},{},{},{})"
+    strQuery.format(val0, val1, val2, val3, val4)
+	curs.execute(strQuery)
 	db.commit()
 finally:
 	db.close()

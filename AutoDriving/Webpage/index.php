@@ -70,6 +70,6 @@
 	</tbody>	
         </table>	
 	<br/>	
-	<a href="showall.php">더보기</a>	
+	<a href="showall.php">more...</a>	
     </body>	
 </html>
