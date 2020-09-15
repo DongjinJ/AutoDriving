@@ -163,9 +163,26 @@ void setup() {
   delay(1000);
   Order.reserve(200);
 
-  Servo_power(0);
   refVelocity = 0;
+
+  Servo_power(30);
+  delay(2000);
+
+  Servo_power(-30);
+  delay(2000);
+
+  Servo_power(0);
+  delay(2000);
+
   Forward();
+  Motor_power(200);
+  delay(2000);
+  Motor_power(0);
+
+  Backward();
+  Motor_power(200);
+  delay(2000);
+  Motor_power(0);
 
   while (!state->IG) {
     ;
