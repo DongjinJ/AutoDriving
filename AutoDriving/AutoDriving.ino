@@ -23,8 +23,8 @@
 #define TwoPiR 0.19823
 #define Resolution 360
 
-#define Servo_MAXus     (1880U) * 2
-#define Servo_MINus     (520U) * 2
+#define Servo_MAXus     (500U) 
+#define Servo_MINus     (100U)
 
 #define SamplingTime_A    0.09                    // Sec 단위 (속도 계산 주기)
 #define SamplingTime_B    1.0                     // Sec 단위 (속도 계산 주기)
@@ -154,7 +154,6 @@ void setup() {
   Interrupt_Init();
   PWM_Init();
 
-
   state = new flag();
 
   Serial.begin(115200);
@@ -163,26 +162,15 @@ void setup() {
   delay(1000);
   Order.reserve(200);
 
-  refVelocity = 0;
-
-  Servo_power(30);
-  delay(2000);
-
-  Servo_power(-30);
-  delay(2000);
-
+  Servo_power(-60);
+  delay(1000);
+  Servo_power(60);
+  delay(1000);
   Servo_power(0);
-  delay(2000);
+  delay(1000);
 
+  refVelocity = 0;
   Forward();
-  Motor_power(200);
-  delay(2000);
-  Motor_power(0);
-
-  Backward();
-  Motor_power(200);
-  delay(2000);
-  Motor_power(0);
 
   while (!state->IG) {
     ;
@@ -206,7 +194,7 @@ void loop() {
 void Sensing() {
 
   brightness = analogRead(cdSensor);
-  //  frontDistance = analogRead(irSensor);
+  frontDistance = analogRead(irSensor);
 
   if (brightness > 600) {
     state->LED = true;
@@ -446,7 +434,7 @@ void PWM_Init() {
 
   TCCR3B &= ~(1 << CS32);
   TCCR3B |= (1 << CS31);
-  TCCR3B |= (1 << CS30);            // CLK/1
+  TCCR3B |= (1 << CS30);            // CLK/64
 
   TCNT3 = 0;
 
@@ -462,7 +450,7 @@ void PWM_Init() {
 
   TCCR4B &= ~(1 << CS42);
   TCCR4B |= (1 << CS41);
-  TCCR4B |= (1 << CS40);            // CLK/1
+  TCCR4B |= (1 << CS40);            // CLK/64
 
   TCNT4 = 0;
 }
@@ -540,7 +528,7 @@ void Decode_command() {
       break;
     case Command_Battery:
       if (Command_TYPE == 'r') {
-        Return_Data += "0/" + String(state->curT) + "%";
+        Return_Data += "0/" + String(voltage) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
@@ -562,7 +550,7 @@ void Decode_command() {
       break;
   }
 }
-#if (DEBUG == ENABLE)
+
 void serialEvent() {
   String DebugData = "";
   while (Serial.available()) {
@@ -597,4 +585,3 @@ void serialEvent() {
   else
     ;
 }
-#endif
