@@ -283,6 +283,9 @@ ISR(TIMER1_COMPA_vect) {
   if (!state->AEB) {
     switch (state->curT) {
       case P:
+        refVelocity = 0;
+        PI_Controller();
+        Motor_power(PI_Control);
         break;
 
       case R:
