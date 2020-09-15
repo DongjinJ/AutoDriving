@@ -1,4 +1,3 @@
-/* Servo Left/center/Right: 150/190/230 +-40 */
 /*  include */
 #include <avr/wdt.h>
 
@@ -23,10 +22,10 @@
 #define TwoPiR 0.19823
 #define Resolution 360
 
-#define Servo_MAXus     (500U) 
+#define Servo_MAXus     (300U)
 #define Servo_MINus     (100U)
 
-#define SamplingTime_A    0.09                    // Sec 단위 (속도 계산 주기)
+#define SamplingTime_A    0.08                    // Sec 단위 (속도 계산 주기)
 #define SamplingTime_B    1.0                     // Sec 단위 (속도 계산 주기)
 
 #define R1          9.83                          // Battery 분배 저항 1
@@ -78,6 +77,7 @@ void Servo_power(int angle);
 void Motor_power(int value);
 void AEB_system();
 void PI_Controller();
+void PD_Controller();
 
 /* ETC Function */
 void Sensing();
@@ -89,6 +89,7 @@ volatile String Order = "";
 volatile int Command_ID;
 volatile int Command_DATA;
 volatile char Command_TYPE;
+volatile float Command_fData;
 
 volatile int pulseCount = 0;
 volatile float distance = 0;
@@ -99,20 +100,31 @@ volatile int ignitionCount = 0;
 volatile int voltageData = 0;
 volatile float voltage = 0;
 
+/* Sync variable */
+volatile int syncCount = 0;
+
 /* Sensing Variable */
 int brightness = 0;
 int frontDistance = 0;
 
 /* PI Motor control Varialble */
-volatile float PI_Control = 0;
-volatile float P_Control = 0;
-volatile float I_Control = 0;
-volatile float Kp = 50;
-volatile float Ki = 110;
-volatile float error = 0;
+volatile float PI_motorControl = 0;
+volatile float P_motorControl = 0;
+volatile float I_motorControl = 0;
+volatile float motorKp = 50;
+volatile float motorKi = 110;
+volatile float motorError = 0;
+
+/* PD Motor control Varialble */
+volatile float PD_servoControl = 0;
+volatile float P_servoControl = 0;
+volatile float D_servoControl = 0;
+volatile float servoKp = 1;
+volatile float servoKd = 1;
+volatile float servoError = 0;
+volatile float servoErrorPrev = 0;
 
 float refVelocity = 0;
-int Steering = 0;
 int power = 128;
 
 enum Transmission {
@@ -128,6 +140,7 @@ class flag {
     volatile bool AEB;
     volatile bool LED;
     volatile bool IG;
+    volatile bool sync;
     volatile int curT;
 
     flag();
@@ -138,6 +151,7 @@ flag::flag() {
   AEB = false;
   LED = false;
   IG = false;
+  sync = false;
   curT = P;
 }
 
@@ -162,17 +176,40 @@ void setup() {
   delay(1000);
   Order.reserve(200);
 
-  Servo_power(-60);
+  Servo_power(-30);
+  digitalWrite(Right_LED, HIGH);
+  digitalWrite(Left_LED, HIGH);
   delay(1000);
-  Servo_power(60);
+
+  Servo_power(30);
+  digitalWrite(Right_LED, LOW);
+  digitalWrite(Left_LED, LOW);
   delay(1000);
+
   Servo_power(0);
+  digitalWrite(Right_LED, HIGH);
+  digitalWrite(Left_LED, HIGH);
+  delay(1000);
+
+  Servo_power(-60);
+  digitalWrite(Right_LED, LOW);
+  digitalWrite(Left_LED, LOW);
+  delay(1000);
+
+  Servo_power(60);
+  digitalWrite(Right_LED, HIGH);
+  digitalWrite(Left_LED, HIGH);
+  delay(1000);
+
+  Servo_power(0);
+  digitalWrite(Right_LED, LOW);
+  digitalWrite(Left_LED, LOW);
   delay(1000);
 
   refVelocity = 0;
   Forward();
 
-  while (!state->IG) {
+  while (!state->IG || !state->sync) {
     ;
   }
   Serial.println("Ignition On...");
@@ -217,13 +254,6 @@ void Actuating() {
   if (state->change) {
     state->change = false;
 
-#if (DEBUG == ENABLE)
-    Serial.print("Command ID: ");
-    Serial.println(Command_ID);
-    Serial.print("Command DATA: ");
-    Serial.println(Command_DATA);
-#endif
-
     Decode_command();
     Order = "";
   }
@@ -233,23 +263,25 @@ void Actuating() {
   else
     digitalWrite(Head_LED, LOW);
 
-  while (!state->IG) {
-    Serial.println("Low Battery Voltage or Ignition Off");
+  while (!state->IG || !state->sync) {
+    if (!state->IG)
+      Serial.println("Low Battery Voltage or Ignition Off");
+    else
+      ;
+    if (!state->sync)
+      Serial.println("Disconnect Raspberry Pi");
+    else
+      ;
     delay(1000);
   }
 
-  if (Steering < -90)
-    Servo_power(-90);
-  else if (Steering > 90)
-    Servo_power(90);
-  else
-    Servo_power(Steering);
+
 }
 
 void AEB_system() {
   digitalWrite(Rear_LED, HIGH);
-  PI_Control = 0;
-  I_Control = 0;
+  PI_motorControl = 0;
+  I_motorControl = 0;
   if (velocity > 0 ) {
     Backward();
     Motor_power(200);
@@ -261,18 +293,27 @@ void AEB_system() {
 }
 
 void PI_Controller() {
-  error = refVelocity - velocity;
-  P_Control = Kp * error;
-  I_Control += Ki * error * SamplingTime_A;
-  PI_Control = P_Control + I_Control;
-  if (velocity > 0)
-    ;
+  motorError = refVelocity - velocity;
+  P_motorControl = motorKp * motorError;
+  I_motorControl += motorKi * motorError * SamplingTime_A;
+  PI_motorControl = P_motorControl + I_motorControl;
+  if ((velocity == 0 && refVelocity != 0) && state->curT != P)
+    I_motorControl += 50;
   else
-    I_Control += 50;
-  if (PI_Control > 255)
-    PI_Control = 255;
-  else if (PI_Control < -255)
-    PI_Control = -255;
+    ;
+  if (PI_motorControl > 255)
+    PI_motorControl = 255;
+  else if (PI_motorControl < -255)
+    PI_motorControl = -255;
+}
+
+void PD_Controller() {
+  P_servoControl = servoKp * servoError;
+  D_servoControl = servoKd * (servoError - servoErrorPrev) / SamplingTime_A;
+
+  servoErrorPrev = servoError;
+
+  PD_servoControl = P_servoControl + D_servoControl;
 }
 
 ISR(TIMER1_COMPA_vect) {
@@ -280,23 +321,37 @@ ISR(TIMER1_COMPA_vect) {
   velocity = distance / SamplingTime_A;
   pulseCount = 0;
 
+  PD_Controller();
+  if (PD_servoControl < -60)
+    Servo_power(-60);
+  else if (PD_servoControl > 60)
+    Servo_power(60);
+  else
+    Servo_power(PD_servoControl);
+
   if (!state->AEB) {
     switch (state->curT) {
       case P:
         refVelocity = 0;
         PI_Controller();
-        Motor_power(PI_Control);
+        if (PI_motorControl >= 0) {
+          Backward();
+          Motor_power(PI_motorControl);
+        }
+        else {
+          Forward();
+          Motor_power(-PI_motorControl);
+        }
         break;
 
       case R:
         PI_Controller();
-        if (PI_Control >= 0) {
-          Forward();
-          Motor_power(PI_Control);
+        if (PI_motorControl >= 0) {
+          Motor_power(0);
         }
         else {
           Backward();
-          Motor_power(PI_Control);
+          Motor_power(-PI_motorControl);
         }
         break;
 
@@ -305,9 +360,9 @@ ISR(TIMER1_COMPA_vect) {
 
       case D:
         PI_Controller();
-        if (PI_Control >= 0) {
+        if (PI_motorControl >= 0) {
           Forward();
-          Motor_power(PI_Control);
+          Motor_power(PI_motorControl);
         }
         else {
           Motor_power(0);
@@ -338,7 +393,17 @@ ISR(TIMER5_COMPA_vect) {
   else
     ;
 
-  if (ignitionCount >= 10)
+  if (!digitalRead(syncArduino))
+    syncCount++;
+  else
+    syncCount = 0;
+
+  if (syncCount >= 5)
+    state->sync = false;
+  else
+    state->sync = true;
+
+  if (ignitionCount >= 5)
     state->IG = true;
   else if (ignitionCount <= 0)
     state->IG = false;
@@ -504,25 +569,25 @@ void Decode_command() {
   switch (Command_ID) {
     case Command_Servo:
       if (Command_TYPE == 'r') {
-        Return_Data += "0/" + String(Steering) + "%";
+        Return_Data += "0/" + String(PD_servoControl) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
-        Steering = Command_DATA;
+        servoError = Command_DATA;
       }
       break;
     case Command_Velocity:
       if (Command_TYPE == 'r') {
-        Return_Data += "0/" + String(velocity) + "%";
+        Return_Data += "1/" + String(velocity) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
-        refVelocity = Command_DATA;
+        refVelocity = Command_fData;
       }
       break;
     case Command_Transmission:
       if (Command_TYPE == 'r') {
-        Return_Data += "0/" + String(state->curT) + "%";
+        Return_Data += "2/" + String(state->curT) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
@@ -531,7 +596,7 @@ void Decode_command() {
       break;
     case Command_Battery:
       if (Command_TYPE == 'r') {
-        Return_Data += "0/" + String(voltage) + "%";
+        Return_Data += "3/" + String(voltage) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
@@ -540,8 +605,8 @@ void Decode_command() {
       break;
     case Command_CarState:
       if (Command_TYPE == 'r') {
-        state_data = (state->AEB << 2) | (state->LED << 1) | (state->IG);
-        Return_Data += "0/" + String(state_data) + "%";
+        state_data = (state->AEB << 3) | (state->LED << 2) | (state->IG << 1) | (state->sync);
+        Return_Data += "4/" + String(state_data) + "%";
         Serial.println(Return_Data);
       }
       else if (Command_TYPE == 'w') {
@@ -576,7 +641,7 @@ void serialEvent() {
       Command_ID = temp.toInt();
       if (Command_ID == Command_Velocity) {
         temp = Order.substring(indexS + 1);
-        Command_DATA = temp.toFloat();
+        Command_fData = temp.toFloat();
       }
       else {
         temp = Order.substring(indexS + 1);
