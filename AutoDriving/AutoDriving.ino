@@ -25,7 +25,7 @@
 #define Servo_MAXus     (300U)
 #define Servo_MINus     (100U)
 
-#define SamplingTime_A    0.08                    // Sec 단위 (속도 계산 주기)
+#define SamplingTime_A    0.09                    // Sec 단위 (속도 계산 주기)
 #define SamplingTime_B    1.0                     // Sec 단위 (속도 계산 주기)
 
 #define R1          9.83                          // Battery 분배 저항 1
@@ -119,8 +119,8 @@ volatile float motorError = 0;
 volatile float PD_servoControl = 0;
 volatile float P_servoControl = 0;
 volatile float D_servoControl = 0;
-volatile float servoKp = 1;
-volatile float servoKd = 1;
+volatile float servoKp = 0.3;
+volatile float servoKd = 1.5;
 volatile float servoError = 0;
 volatile float servoErrorPrev = 0;
 
@@ -241,7 +241,7 @@ void Sensing() {
 
   }
 
-  if (frontDistance > 300) {
+  if (frontDistance > 500) {
     state->AEB = true;
   }
   else {
@@ -298,7 +298,7 @@ void PI_Controller() {
   I_motorControl += motorKi * motorError * SamplingTime_A;
   PI_motorControl = P_motorControl + I_motorControl;
   if ((velocity == 0 && refVelocity != 0) && state->curT != P)
-    I_motorControl += 50;
+    I_motorControl += 25;
   else
     ;
   if (PI_motorControl > 255)
