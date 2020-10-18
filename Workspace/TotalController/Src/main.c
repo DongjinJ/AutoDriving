@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "i2c.h"
 #include "rtc.h"
 #include "tim.h"
@@ -29,8 +30,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Config.h"
-#include "LCD_HD44780_I2C.h"
-#include "MotorControl.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,6 +60,7 @@ uint8_t sndFlag = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 void UART6_IRQHandler(void);
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
@@ -79,8 +79,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	RTC_TimeTypeDef sTime;
-	RTC_DateTypeDef sDate;
 
   /* USER CODE END 1 */
 
@@ -108,28 +106,15 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim3);
-  HAL_Delay(1000);
-  LCD_Init(&hi2c1);
-//  HAL_UART_Transmit(&huart6, txBuffer, txLen, 0xFFFF);
-  HAL_NVIC_EnableIRQ(USART6_IRQn);
-  sDate.Year = 20;
-  sDate.Month = 3;
-  sDate.Date = 11;
 
-  sTime.Hours = 19;
-  sTime.Minutes = 38;
-  sTime.Seconds = 0;
-
-  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-  HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-#if (Project_Motor_Spec	== Servo_DC)
-  Servo_Init(&htim1, TIM_CHANNEL_1);
-#else
-
-#endif
   /* USER CODE END 2 */
 
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -137,30 +122,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-	  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-	  LCD_Cls();
-	  LCD_Locate(0,0);
-	  LCD_Int(sDate.Year);
-	  LCD_String(".");
-	  LCD_Int(sDate.Month);
-	  LCD_String(".");
-	  LCD_Int(sDate.Date);
-
-	  LCD_Locate(0,1);
-	  LCD_Int(sTime.Hours);
-	  LCD_String(":");
-	  LCD_Int(sTime.Minutes);
-	  LCD_String(":");
-	  LCD_Int(sTime.Seconds);
-
-	  Servo_Angle(-90);
-	  HAL_Delay(1000);
-	  Servo_Angle(0);
-	  HAL_Delay(1000);
-	  Servo_Angle(90);
-	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -175,27 +137,26 @@ void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage 
+  /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 16;
-  RCC_OscInitStruct.PLL.PLLN = 336;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -255,7 +216,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

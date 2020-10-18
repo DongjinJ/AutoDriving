@@ -9,8 +9,11 @@ S_SRCS += \
 OBJS += \
 ./Startup/startup_stm32f401retx.o 
 
+S_DEPS += \
+./Startup/startup_stm32f401retx.d 
+
 
 # Each subdirectory must supply rules for building sources it contributes
-Startup/%.o: ../Startup/%.s
-	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -I../ -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+Startup/startup_stm32f401retx.o: ../Startup/startup_stm32f401retx.s
+	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -I../ -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
 

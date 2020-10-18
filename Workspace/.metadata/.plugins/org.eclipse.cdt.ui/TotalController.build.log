@@ -1,10 +1,12 @@
-21:08:40 **** Incremental Build of configuration Debug for project TotalController ****
+13:09:23 **** Incremental Build of configuration Debug for project TotalController ****
 make -j8 all 
-arm-none-eabi-size   TotalController.elf 
-   text	   data	    bss	    dec	    hex	filename
-  22048	    120	   1920	  24088	   5e18	TotalController.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/freertos.d" -MT"Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/freertos.o"
+arm-none-eabi-gcc -o "TotalController.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Dongjin\Documents\GitHub\AutoDriving\Workspace\TotalController\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TotalController.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/freertos.o:(.rodata+0x3c): undefined reference to `RTOS_Task1'
+Src/freertos.o:(.rodata+0x68): undefined reference to `RTOS_Task2'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:54: TotalController.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-21:08:44 Build Finished. 0 errors, 0 warnings. (took 4s.246ms)
+13:09:26 Build Failed. 3 errors, 0 warnings. (took 3s.329ms)
 
